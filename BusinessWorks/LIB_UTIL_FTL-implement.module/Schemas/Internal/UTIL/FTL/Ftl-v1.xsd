@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/internal/util/ftl/v1"
+	xmlns:ftl="http://www.example.org/xsd/internal/util/ftl/v1" elementFormDefault="qualified">
+	
+	<element name="Channel" type="string"/>
+	<element name="Payload" type="anyType"/>
+	<element name="Message" type="base64Binary"/>
+	<element name="BatchExecutionSize" type="integer"/>
+	<element name="RequestCount" type="integer"/>
+	<element name="BatchStartIndex" type="integer"/>
+	
+	<element name="PerformPreExecutionPlanning">
+		<complexType>
+			<sequence>
+				<element ref="ftl:BatchExecutionSize" />
+				<element ref="ftl:RequestCount" />
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="ComputeCurrentBatchExecutionPlan">
+		<complexType>
+			<sequence>
+				<element ref="ftl:BatchStartIndex" />
+				<element ref="ftl:BatchExecutionSize" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>
