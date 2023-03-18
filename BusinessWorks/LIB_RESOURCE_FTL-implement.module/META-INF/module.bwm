@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:ftlsr="http://ns.tibco.com/bw/sharedresource/ftl" xmlns:property="http://ns.tibco.com/bw/property" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_VxCq4MDkEe2MLPdskBDC9Q" targetNamespace="http://tns.tibco.com/bw/composite/LIB_RESOURCE_FTL-implement.module" name="LIB_RESOURCE_FTL-implement.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_V1gUIMDkEe2MLPdskBDC9Q" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V1u9oMDkEe2MLPdskBDC9Q" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V1yA8MDkEe2MLPdskBDC9Q" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V1z2IMDkEe2MLPdskBDC9Q" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V11EQMDkEe2MLPdskBDC9Q" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V12SYMDkEe2MLPdskBDC9Q" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V14HkMDkEe2MLPdskBDC9Q" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V158wMDkEe2MLPdskBDC9Q" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_V17x8MDkEe2MLPdskBDC9Q" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Ii6AMMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnectionName" type="ftlsr:FTLRealmServerConnection" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_McjyUMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlRealmServerUrl" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_RjcMkMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlSecondaryRealmServerUrl" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WTQKoMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlApplicationName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WU3UMMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlApplicationInstanceId" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WWN_EMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_cNn3UMDlEe2MLPdskBDC9Q" name="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/password" type="property:password" scaext:simpleValue="#!+HS+xidFadsFc79I0VYQKA==" publicAccess="true" scalable="true"/>
+</sca:composite>

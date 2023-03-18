@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ftlsr="http://ns.tibco.com/bw/sharedresource/ftl" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_iZagoMDkEe2MLPdskBDC9Q" name="LIB.RESOURCE.FTL.FTLRealmServerConnection" type="ftlsr:FTLRealmServerConnection">
+  <jndi:configuration xsi:type="ftlsr:FTLRealmServerConnection" xmi:id="_iZbHsMDkEe2MLPdskBDC9Q">
+    <substitutionBindings xmi:id="_1DRiQMDlEe2MLPdskBDC9Q" template="realmServerURL" propName="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlRealmServerUrl"/>
+    <substitutionBindings xmi:id="_2BIRoMDlEe2MLPdskBDC9Q" template="secondaryRealmServerURL" propName="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlSecondaryRealmServerUrl"/>
+    <substitutionBindings xmi:id="_33AOIMDlEe2MLPdskBDC9Q" template="applicationInstanceIdentifier" propName="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlApplicationInstanceId"/>
+    <substitutionBindings xmi:id="_49G6kMDlEe2MLPdskBDC9Q" template="username" propName="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/username"/>
+    <substitutionBindings xmi:id="_53wk8MDlEe2MLPdskBDC9Q" template="password" propName="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/password"/>
+    <substitutionBindings xmi:id="_p0La8MV3Ee2MWIy6HwA-vQ" template="applicationName" propName="/resources/LIB_RESOURCE_FTL/ftlRealmServerConnection/ftlApplicationName"/>
+    <substitutionBindings xmi:id="_qk1b0MV3Ee2MWIy6HwA-vQ" template="clientLabel" propName="BW.DEPLOYMENTUNIT.NAME"/>
+  </jndi:configuration>
+</jndi:namedResource>
