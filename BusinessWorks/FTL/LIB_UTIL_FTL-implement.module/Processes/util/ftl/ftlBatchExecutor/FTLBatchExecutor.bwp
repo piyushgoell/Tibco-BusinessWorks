@@ -1602,46 +1602,46 @@
             name="ConstructFTLBatchExecutorResponse" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:AccumulatedOutput"
             name="AccumulateFTLBatchExecutorResponse" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply1" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply2-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply2" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply3-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply3" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply4-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply4" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply5-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply5" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply6-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply6" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply7-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply7" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply8-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply8" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply9-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply9" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyRequest"
-            name="FTLRequestReply10-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:FTLRequestReplyResponse"
-            name="FTLRequestReply10" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor2-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor2" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor3-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor3" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor4-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor4" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor5-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor5" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor6-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor6" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor7-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor7" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor8-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor8" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor9-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor9" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorRequest"
+            name="FTLExecutor10-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLExecutorResponse"
+            name="FTLExecutor10" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1797,24 +1797,24 @@
                                     <bpws:source linkName="GroupStartToComputeCurrentBatchExecutionPlan"/>
                                 </bpws:sources>
                                 <bpws:copy tibex:reset="yes">
-                                    <bpws:from variable="FTLRequestReply10"/>
-                                    <bpws:to variable="FTLRequestReply10"/>
+                                    <bpws:from variable="FTLExecutor10"/>
+                                    <bpws:to variable="FTLExecutor10"/>
                                 </bpws:copy>
                                 <bpws:copy tibex:reset="yes">
-                                    <bpws:from variable="FTLRequestReply9"/>
-                                    <bpws:to variable="FTLRequestReply9"/>
+                                    <bpws:from variable="FTLExecutor9"/>
+                                    <bpws:to variable="FTLExecutor9"/>
                                 </bpws:copy>
                                 <bpws:copy tibex:reset="yes">
-                                    <bpws:from variable="FTLRequestReply8"/>
-                                    <bpws:to variable="FTLRequestReply8"/>
+                                    <bpws:from variable="FTLExecutor8"/>
+                                    <bpws:to variable="FTLExecutor8"/>
                                 </bpws:copy>
                                 <bpws:copy tibex:reset="yes">
-                                    <bpws:from variable="FTLRequestReply7"/>
-                                    <bpws:to variable="FTLRequestReply7"/>
+                                    <bpws:from variable="FTLExecutor7"/>
+                                    <bpws:to variable="FTLExecutor7"/>
                                 </bpws:copy>
                                 <bpws:copy tibex:reset="yes">
-                                    <bpws:from variable="FTLRequestReply6"/>
-                                    <bpws:to variable="FTLRequestReply6"/>
+                                    <bpws:from variable="FTLExecutor6"/>
+                                    <bpws:to variable="FTLExecutor6"/>
                                 </bpws:copy>
                                 <bpws:copy tibex:reset="yes">
                                     <bpws:from variable="FTLRequestReply5"/>
@@ -1871,9 +1871,9 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply1-input"
-                                    name="FTLRequestReply1"
-                                    outputVariable="FTLRequestReply1"
+                                    inputVariable="FTLExecutor1-input"
+                                    name="FTLExecutor1"
+                                    outputVariable="FTLExecutor1"
                                     tibex:xpdlId="4b62823e-a13c-43e2-919d-267bbe2cfd0e"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -1884,17 +1884,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply1-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;1 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLRequestReply1-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;1 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply2-input"
-                                    name="FTLRequestReply2"
-                                    outputVariable="FTLRequestReply2"
+                                    inputVariable="FTLExecutor2-input"
+                                    name="FTLExecutor2"
+                                    outputVariable="FTLExecutor2"
                                     tibex:xpdlId="a642a6c8-ffd1-4bff-bb25-44e6671ce78c"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -1905,17 +1905,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply2-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;2 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLRequestReply2-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;2 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply3-input"
-                                    name="FTLRequestReply3"
-                                    outputVariable="FTLRequestReply3"
+                                    inputVariable="FTLExecutor3-input"
+                                    name="FTLExecutor3"
+                                    outputVariable="FTLExecutor3"
                                     tibex:xpdlId="58b2c2b4-9646-4232-bf66-36d62b4c122b"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -1926,17 +1926,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply3-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;3 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLRequestReply3-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;3 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply7-input"
-                                    name="FTLRequestReply7"
-                                    outputVariable="FTLRequestReply7"
+                                    inputVariable="FTLExecutor7-input"
+                                    name="FTLExecutor7"
+                                    outputVariable="FTLExecutor7"
                                     tibex:xpdlId="390d2467-b70f-4be5-9eb2-8858b3b187d1"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -1947,17 +1947,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply7-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;7 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLExecutor7-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;7 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply6-input"
-                                    name="FTLRequestReply6"
-                                    outputVariable="FTLRequestReply6"
+                                    inputVariable="FTLExecutor6-input"
+                                    name="FTLExecutor6"
+                                    outputVariable="FTLExecutor6"
                                     tibex:xpdlId="339ef06a-f76c-4ebf-be38-167558f8295b"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -1968,17 +1968,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply6-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;6 + $ComputeCurrentBatchExecutionPlan/tns:BatchExecutionSize&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLExecutor6-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;6 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply5-input"
-                                    name="FTLRequestReply5"
-                                    outputVariable="FTLRequestReply5"
+                                    inputVariable="FTLExecutor5-input"
+                                    name="FTLExecutor5"
+                                    outputVariable="FTLExecutor5"
                                     tibex:xpdlId="749ed671-c833-4dd0-a666-85372fbb2159"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -1989,17 +1989,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply5-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;5 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLRequestReply5-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;5 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply4-input"
-                                    name="FTLRequestReply4"
-                                    outputVariable="FTLRequestReply4"
+                                    inputVariable="FTLExecutor4-input"
+                                    name="FTLExecutor4"
+                                    outputVariable="FTLExecutor4"
                                     tibex:xpdlId="da53e57c-4955-497e-8310-98faee047422"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -2010,10 +2010,10 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply4-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;4 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLRequestReply4-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;4 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
@@ -2128,9 +2128,9 @@
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply8-input"
-                                    name="FTLRequestReply8"
-                                    outputVariable="FTLRequestReply8"
+                                    inputVariable="FTLExecutor8-input"
+                                    name="FTLExecutor8"
+                                    outputVariable="FTLExecutor8"
                                     tibex:xpdlId="5a255017-f9c3-4b94-9dfe-901efc0f9e09"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -2141,17 +2141,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply7-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;7 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLExecutor8-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;8 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply9-input"
-                                    name="FTLRequestReply9"
-                                    outputVariable="FTLRequestReply9"
+                                    inputVariable="FTLExecutor9-input"
+                                    name="FTLExecutor9"
+                                    outputVariable="FTLExecutor9"
                                     tibex:xpdlId="eae425bb-c7f4-4c5f-89ce-e74797bb628c"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -2162,17 +2162,17 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply7-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;7 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLExecutor9-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;9 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    inputVariable="FTLRequestReply10-input"
-                                    name="FTLRequestReply10"
-                                    outputVariable="FTLRequestReply10"
+                                    inputVariable="FTLExecutor10-input"
+                                    name="FTLExecutor10"
+                                    outputVariable="FTLExecutor10"
                                     tibex:xpdlId="9057924c-2f2d-4a16-af5f-920b9bd70c2f"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
@@ -2183,10 +2183,10 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:template name=&quot;FTLRequestReply7-input&quot; match=&quot;/&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;7 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;ComputeCurrentBatchExecutionPlan&quot;/>&lt;xsl:param name=&quot;PerformPreExecutionPlanning&quot;/>&lt;xsl:template name=&quot;FTLExecutor10-input&quot; match=&quot;/&quot;>&lt;tns:FTLExecutorRequest>&lt;xsl:variable name=&quot;CurrentIndex&quot; select=&quot;10 + $ComputeCurrentBatchExecutionPlan/tns:BatchStartIndex&quot;/>&lt;xsl:choose>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;RequestReply&amp;quot;&quot;>&lt;ftl:FTLRequestReplyRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLRequestReplyRequest>&lt;/xsl:when>&lt;xsl:when test=&quot;$PerformPreExecutionPlanning/ftl:FTLOperation=&amp;quot;Publisher&amp;quot;&quot;>&lt;ftl:FTLPublishRequest>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest[$CurrentIndex]&quot;/>&lt;/ftl:FTLPublishRequest>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns:FTLExecutorRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
-                                    subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                                    subProcessName="UTIL.FTL.SUB.FTLExecutor" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>
                             </bpws:extensionActivity>
                             <bpws:extensionActivity>
@@ -2249,7 +2249,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;ConstructFTLBatchExecutorResponse-input&quot; match=&quot;/&quot;>&lt;ftl:FTLBatchExecutorResponse>&lt;xsl:for-each select=&quot;$FTLRequestReply1 | $FTLRequestReply2 | $FTLRequestReply3| $FTLRequestReply4| $FTLRequestReply5| $FTLRequestReply6| $FTLRequestReply7| $FTLRequestReply8| $FTLRequestReply9| $FTLRequestReply10&quot;>&lt;ftl:FTLResponse>&lt;ftl:Payload>&lt;xsl:copy-of select=&quot;./ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;./@*&quot;/>&lt;xsl:copy-of select=&quot;./node()&quot;/>&lt;/ftl:Payload>&lt;/ftl:FTLResponse>&lt;/xsl:for-each>&lt;/ftl:FTLBatchExecutorResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FTLExecutor10&quot;/>&lt;xsl:param name=&quot;FTLExecutor9&quot;/>&lt;xsl:param name=&quot;FTLExecutor8&quot;/>&lt;xsl:param name=&quot;FTLExecutor7&quot;/>&lt;xsl:param name=&quot;FTLExecutor6&quot;/>&lt;xsl:param name=&quot;FTLExecutor5&quot;/>&lt;xsl:param name=&quot;FTLExecutor4&quot;/>&lt;xsl:param name=&quot;FTLExecutor3&quot;/>&lt;xsl:param name=&quot;FTLExecutor2&quot;/>&lt;xsl:param name=&quot;FTLExecutor1&quot;/>&lt;xsl:template name=&quot;ConstructFTLBatchExecutorResponse-input&quot; match=&quot;/&quot;>&lt;ftl:FTLBatchExecutorResponse>&lt;xsl:for-each select=&quot;$FTLExecutor1/ftl:FTLRequestReplyResponse | $FTLExecutor2/ftl:FTLRequestReplyResponse | $FTLExecutor3/ftl:FTLRequestReplyResponse | $FTLExecutor4/ftl:FTLRequestReplyResponse| $FTLExecutor5/ftl:FTLRequestReplyResponse | $FTLExecutor6/ftl:FTLRequestReplyResponse| $FTLExecutor7/ftl:FTLRequestReplyResponse | $FTLExecutor8/ftl:FTLRequestReplyResponse| $FTLExecutor9/ftl:FTLRequestReplyResponse | $FTLExecutor10/ftl:FTLRequestReplyResponse&quot;>&lt;xsl:copy-of select=&quot;$FTLExecutor2/ftl:FTLRequestReplyResponse/ftl:FTLResponse&quot;/>&lt;/xsl:for-each>&lt;/ftl:FTLBatchExecutorResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2289,7 +2289,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;MAX_BATCH_SIZE&quot;/>&lt;xsl:template name=&quot;PerformPreExecutionPlanning-input&quot; match=&quot;/&quot;>&lt;tns:PerformPreExecutionPlanning>&lt;xsl:variable name=&quot;REQUEST_COUNT&quot; select=&quot;count($Start/ftl:FTLRequest)&quot;/>&lt;xsl:variable name=&quot;REQUEST_BATCH_EXECUTION_SIZE&quot; select=&quot;xsd:integer(tib:if-absent($Start/ftl:BatchExecutionSize, xsd:string($MAX_BATCH_SIZE)))&quot;/>&lt;xsl:variable name=&quot;MAX_BATCH_EXECUTION_SIZE&quot; select=&quot;min(($MAX_BATCH_SIZE,$REQUEST_BATCH_EXECUTION_SIZE,$REQUEST_COUNT))&quot;/>&lt;tns:BatchExecutionSize>&lt;xsl:value-of select=&quot;$MAX_BATCH_EXECUTION_SIZE&quot;/>&lt;/tns:BatchExecutionSize>&lt;tns:RequestCount>&lt;xsl:value-of select=&quot;$REQUEST_COUNT&quot;/>&lt;/tns:RequestCount>&lt;/tns:PerformPreExecutionPlanning>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;MAX_BATCH_SIZE&quot;/>&lt;xsl:template name=&quot;PerformPreExecutionPlanning-input&quot; match=&quot;/&quot;>&lt;tns:PerformPreExecutionPlanning>&lt;xsl:variable name=&quot;REQUEST_COUNT&quot; select=&quot;count($Start/ftl:FTLRequest)&quot;/>&lt;xsl:variable name=&quot;REQUEST_BATCH_EXECUTION_SIZE&quot; select=&quot;xsd:integer(tib:if-absent($Start/ftl:BatchExecutionSize, xsd:string($MAX_BATCH_SIZE)))&quot;/>&lt;xsl:variable name=&quot;MAX_BATCH_EXECUTION_SIZE&quot; select=&quot;min(($MAX_BATCH_SIZE,$REQUEST_BATCH_EXECUTION_SIZE,$REQUEST_COUNT))&quot;/>&lt;tns:BatchExecutionSize>&lt;xsl:value-of select=&quot;$MAX_BATCH_EXECUTION_SIZE&quot;/>&lt;/tns:BatchExecutionSize>&lt;tns:RequestCount>&lt;xsl:value-of select=&quot;$REQUEST_COUNT&quot;/>&lt;/tns:RequestCount>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/ftl:FTLOperation)&quot;>&lt;ftl:FTLOperation>&lt;xsl:value-of select=&quot;$Start/ftl:FTLOperation&quot;/>&lt;/ftl:FTLOperation>&lt;/xsl:when>&lt;xsl:otherwise>&lt;ftl:FTLOperation>&lt;xsl:value-of select=&quot;&amp;quot;RequestReply&amp;quot;&quot;/>&lt;/ftl:FTLOperation>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/tns:PerformPreExecutionPlanning>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpws:process exitOnStandardFault="no"
-    name="UTIL.FTL.FTLPublish.FTLPublish" suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230318223020"
+<bpws:process exitOnStandardFault="no" name="UTIL.FTL.SUB.FTLExecutor"
+    suppressJoinFailure="yes"
+    targetNamespace="http://xmlns.example.com/20230318234754"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
-    xmlns:ns0="http://tns.tibco.com/bw/ftl/publisher/message"
-    xmlns:ns1="http://tns.tibco.com/bw/palette/internal/activityerror+bw.ftl.publisher"
-    xmlns:ns2="http://tns.tibco.com/bw/ftl/publisher/message+05e50755-7be5-4fb4-a2e7-eaa256f29cfb"
-    xmlns:ns3="http://www.example.org/xsd/interface/util/ftl/v1"
-    xmlns:ns4="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions"
-    xmlns:ns5="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+05e50755-7be5-4fb4-a2e7-eaa256f29cfb"
-    xmlns:ns6="http://www.tibco.com/pe/WriteToLogActivitySchema"
+    xmlns:ns0="http://www.example.org/xsd/internal/util/ftl/v1"
+    xmlns:ns1="http://www.example.org/xsd/interface/util/ftl/v1"
+    xmlns:ns2="http://www.tibco.com/pe/WriteToLogActivitySchema"
+    xmlns:ns3="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -178,91 +175,6 @@
             <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
         <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/ftl/publisher/fault"
-            xmlns:tns="http://tns.tibco.com/bw/ftl/publisher/fault" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:element name="FTLPublisherActivityFault">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="msg" type="xs:string"/>
-                        <xs:element minOccurs="0" name="msgCode" type="xs:string"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="FTLCreateMessageFault">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="msg" type="xs:string"/>
-                        <xs:element minOccurs="0" name="msgCode" type="xs:string"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="FTLSendMessageFault">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="msg" type="xs:string"/>
-                        <xs:element minOccurs="0" name="msgCode" type="xs:string"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-        </xs:schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/ftl/publisher/message+05e50755-7be5-4fb4-a2e7-eaa256f29cfb"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://www.example.org/xsd/interface/util/ftl/v1" xmlns:tns="http://tns.tibco.com/bw/ftl/publisher/message+05e50755-7be5-4fb4-a2e7-eaa256f29cfb">
-            <import namespace="http://www.example.org/xsd/interface/util/ftl/v1"/>
-            <complexType name="MetadataType">
-                <sequence/>
-            </complexType>
-            <simpleType name="ftlInbox">
-                <restriction base="string"/>
-            </simpleType>
-            <complexType name="OpaqueMessageType">
-                <sequence>
-                    <element minOccurs="0" name="_data" type="base64Binary"/>
-                </sequence>
-            </complexType>
-            <element name="OpaqueMessage">
-                <complexType>
-                    <sequence>
-                        <element minOccurs="0" name="Metadata" type="tns:MetadataType"/>
-                        <element minOccurs="0" name="Message" type="tns:OpaqueMessageType"/>
-                    </sequence>
-                </complexType>
-            </element>
-            <complexType name="KeyedOpaqueMessageType">
-                <sequence>
-                    <element minOccurs="0" name="_key" type="string"/>
-                    <element minOccurs="0" name="_data" type="base64Binary"/>
-                </sequence>
-            </complexType>
-            <element name="KeyedOpaqueMessage">
-                <complexType>
-                    <sequence>
-                        <element minOccurs="0" name="Metadata" type="tns:MetadataType"/>
-                        <element minOccurs="0" name="Message" type="tns:KeyedOpaqueMessageType"/>
-                    </sequence>
-                </complexType>
-            </element>
-            <element name="CustomMessage">
-                <complexType>
-                    <sequence>
-                        <element minOccurs="0" name="Metadata" type="tns:MetadataType"/>
-                        <element minOccurs="0" name="Message" type="Q1:FTLMessageType"/>
-                    </sequence>
-                </complexType>
-            </element>
-            <element name="PredefinedMessage">
-                <complexType>
-                    <sequence>
-                        <element minOccurs="0" name="Metadata" type="tns:MetadataType"/>
-                        <element minOccurs="0" name="Message" type="anyType"/>
-                    </sequence>
-                </complexType>
-            </element>
-        </schema>
-        <xs:schema attributeFormDefault="unqualified"
             elementFormDefault="qualified"
             targetNamespace="http://www.tibco.com/pe/WriteToLogActivitySchema"
             xmlns:tns="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -294,43 +206,31 @@
                 </complexType>
             </element>
         </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+05e50755-7be5-4fb4-a2e7-eaa256f29cfb"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://tns.tibco.com/bw/ftl/publisher/fault" xmlns:tns="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+05e50755-7be5-4fb4-a2e7-eaa256f29cfb">
-            <import namespace="http://tns.tibco.com/bw/ftl/publisher/fault"/>
-            <import namespace="http://tns.tibco.com/bw/ftl/publisher/fault"/>
-            <import namespace="http://tns.tibco.com/bw/ftl/publisher/fault"/>
-            <element name="ErrorLinkHandlerFaultData" type="tns:ErrorLinkHandlerFaultDataType"/>
-            <complexType name="ErrorLinkHandlerFaultDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FTLPublisherActivityFault"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FTLCreateMessageFault"/>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:FTLSendMessageFault"/>
-                </choice>
-            </complexType>
-        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="piyus"
-        createdOn="Sat Mar 18 22:30:20 IST 2023" description=""
+        createdOn="Sat Mar 18 23:47:54 IST 2023" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.org/xsd/interface/util/ftl/v1}FTLPublishRequest" output="{http://www.example.org/xsd/interface/util/ftl/v1}FTLPublishResponse"/>
+        input="{http://www.example.org/xsd/internal/util/ftl/v1}FTLExecutorRequest" output="{http://www.example.org/xsd/internal/util/ftl/v1}FTLExecutorResponse"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
         xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <children type="2001">
-            <children type="5001"/>
+            <children type="5001">
+                <element href="//0/@process"/>
+            </children>
             <children type="3002">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
+                <element href="//0/@process"/>
             </children>
             <children type="3003">
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
+                <element href="//0/@process"/>
             </children>
             <children type="3004">
                 <children type="4018">
@@ -344,24 +244,28 @@
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="Segoe UI"
@@ -371,32 +275,36 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="2"
-                                    xsi:type="notation:Bounds" y="9"/>
+                                    <layoutConstraint x="-1"
+                                    xsi:type="notation:Bounds" y="11"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <children type="4017">
                                     <styles
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.1"/>
                                     <layoutConstraint xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles fontName="Segoe UI"
@@ -406,8 +314,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="348"
-                                    xsi:type="notation:Bounds" y="9"/>
+                                    <layoutConstraint x="539"
+                                    xsi:type="notation:Bounds" y="11"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -441,8 +349,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="219"
-                                    xsi:type="notation:Bounds" y="9"/>
+                                    <layoutConstraint x="318"
+                                    xsi:type="notation:Bounds" y="81"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -476,8 +384,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="102"
-                                    xsi:type="notation:Bounds" y="9"/>
+                                    <layoutConstraint x="318"
+                                    xsi:type="notation:Bounds" y="180"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -511,8 +419,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="219"
-                                    xsi:type="notation:Bounds" y="140"/>
+                                    <layoutConstraint x="322"
+                                    xsi:type="notation:Bounds" y="278"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -546,8 +454,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="356"
-                                    xsi:type="notation:Bounds" y="140"/>
+                                    <layoutConstraint x="457"
+                                    xsi:type="notation:Bounds" y="278"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -562,16 +470,17 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="384"
-                                    width="565" xsi:type="notation:Bounds"/>
+                                    width="724" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
+                                <element href="//0/@process/@activity"/>
                             </children>
                             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="384" width="568" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="384" width="603" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -581,7 +490,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="408" width="568" x="1"
+                    <layoutConstraint height="408" width="603" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -590,10 +499,22 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="460" width="910" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="460" width="1069" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint x="71" xsi:type="notation:Location" y="-16"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
+            <bendpoints
+                points="[25, 1, -294, -69]$[100, 1, -219, -69]$[100, 69, -219, -1]$[295, 69, -24, -1]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
@@ -602,31 +523,45 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[40, 18, -104, 0]$[120, 18, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-            <sourceAnchor id="(0.18699186991869918,0.13333333333333333)" xsi:type="notation:IdentityAnchor"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <bendpoints
+                points="[25, 0, -272, 72]$[214, 0, -83, 72]$[214, -72, -83, 0]$[273, -72, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="14" xsi:type="notation:Location" y="-93"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
+            <bendpoints
+                points="[25, -1, -294, -170]$[101, -1, -218, -170]$[101, 170, -218, 1]$[295, 170, -24, 1]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[25, 3, -125, -14]$[126, 14, -24, -3]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
+            <bendpoints
+                points="[25, 2, -196, 171]$[162, 2, -59, 171]$[162, -171, -59, -2]$[197, -171, -24, -2]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
+            <bendpoints
+                points="[25, 0, -298, -267]$[100, 0, -223, -267]$[100, 267, -223, 0]$[299, 267, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -636,68 +571,39 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
-            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[0, 25, 0, -106]$[0, 107, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
-            namespace="http://www.example.org/xsd/interface/util/ftl/v1" prefix="ftl"/>
+            namespace="http://www.example.org/xsd/interface/util/ftl/v1" prefix="tns"/>
         <tibex:namespaceItem
-            namespace="http://tns.tibco.com/bw/ftl/publisher/message+05e50755-7be5-4fb4-a2e7-eaa256f29cfb" prefix="tns"/>
+            namespace="http://www.example.org/xsd/internal/util/ftl/v1" prefix="tns1"/>
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns1"/>
+            namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns2"/>
         <tibex:namespaceItem
-            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
-        <tibex:namespaceItem
-            namespace="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions" prefix="tns2"/>
+            namespace="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions" prefix="tns3"/>
     </tibex:NamespaceRegistry>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/internal/util/ftl/v1"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/ftl/v1"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable name="ftlProperty" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/sharedresource/ftl}FTLRealmServerConnection" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>LIB.RESOURCE.FTL.FTLRealmServerConnection</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
-        <bpws:variable element="ns2:CustomMessage"
-            name="FTLPublisher-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ErrorLinkHandlerFaultData"
-            name="_error_FTLPublisher" sca-bpel:internal="true"/>
-        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable name="ftlEndpoint" sca-bpel:hotUpdate="false"
-            sca-bpel:privateProperty="true" sca-bpel:property="yes" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>default</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
-        <bpws:variable element="ns3:FTLPublishRequest" name="Start"
+        <bpws:variable element="ns0:FTLExecutorRequest" name="Start"
             sca-bpel:internal="true" tibex:parameter="in"/>
-        <bpws:variable element="ns3:CipherFTLRequestReplyRequest"
-            name="CipherFTLMessage-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:CipherFTLRequestReplyResponse"
-            name="CipherFTLMessage" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:FTLPublishResponse" name="End-input"
-            sca-bpel:internal="true" tibex:parameter="out"/>
-        <bpws:variable element="ns6:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns4:DefaultFault" name="Throw-input" sca-bpel:internal="true"/>
-        <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
-        <bpws:variable element="ns:OptionalErrorReport"
-            name="_errorOptional" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:FTLExecutorResponse"
+            name="End-input" sca-bpel:internal="true" tibex:parameter="out"/>
+        <bpws:variable element="ns1:FTLRequestReplyRequest"
+            name="FTLRequestReply-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLRequestReplyResponse"
+            name="FTLRequestReply" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLPublishRequest"
+            name="FTLPublish-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:FTLPublishResponse"
+            name="FTLPublish" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:DefaultFault" name="Throw-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -710,19 +616,42 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="FTLPublisherToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="StartToCipherFTLMessage" tibex:linkType="SUCCESS"/>
-                <bpws:link name="CipherFTLMessageToFTLPublisher" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToFTLRequestReply_FTLRequestReply"
+                    tibex:label="FTL RequestReply" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="FTLRequestReplyToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToFTLPublish_FTLPublish"
+                    tibex:label="FTL Publish" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="FTLPublishToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToLog" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                 <bpws:link name="LogToThrow" tibex:linkType="SUCCESS"/>
-                <bpws:link name="FTLPublisherToLog" tibex:linkType="ERROR"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="6613cce4-0a29-45d6-8df1-ee479f718c34"
+                    tibex:xpdlId="2d439359-ba88-4b13-bed8-da6b6f89b35f"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToCipherFTLMessage"/>
+                        <bpws:source linkName="StartToFTLRequestReply_FTLRequestReply">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="exists($Start/ns1:FTLRequestReplyRequest)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[exists($Start/ns1:FTLRequestReplyRequest)]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="StartToFTLPublish_FTLPublish">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="exists($Start/ns1:FTLPublishRequest)" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[exists($Start/ns1:FTLPublishRequest)]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="StartToLog">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -732,13 +661,14 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="End-input"
                     name="End"
-                    tibex:xpdlId="51886a64-340f-4c13-bf84-d6804e369460" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="2a579c16-c511-44cc-a4d3-fed69798f102" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="FTLPublisherToEnd"/>
+                        <bpws:target linkName="FTLRequestReplyToEnd"/>
+                        <bpws:target linkName="FTLPublishToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;> &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;> &lt;ftl:FTLPublishResponse/>&lt;/xsl:template> &lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.example.org/xsd/internal/util/ftl/v1&quot; xmlns:tns=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FTLPublish&quot;/>&lt;xsl:param name=&quot;FTLRequestReply&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns1:FTLExecutorResponse>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($FTLRequestReply)&quot;>&lt;xsl:copy-of select=&quot;$FTLRequestReply&quot;/>&lt;/xsl:when>&lt;xsl:when test=&quot;exists($FTLPublish)&quot;>&lt;xsl:copy-of select=&quot;$FTLPublish&quot;/>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns1:FTLExecutorResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -757,82 +687,57 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="FTLPublisher-input"
-                    name="FTLPublisher"
-                    tibex:xpdlId="05e50755-7be5-4fb4-a2e7-eaa256f29cfb" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="CipherFTLMessageToFTLPublisher"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="FTLPublisherToEnd"/>
-                        <bpws:source linkName="FTLPublisherToLog"
-                            tibex:faultDetailsVar="_error" tibex:faultNameVar="FaultName">
-                            <tibex:DesignExpression>
-                                <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##error##]]></bpws:transitionCondition>
-                        </bpws:source>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/ftl/publisher/message+05e50755-7be5-4fb4-a2e7-eaa256f29cfb&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;CipherFTLMessage&quot;/>&lt;xsl:template name=&quot;FTLPublisher-input&quot; match=&quot;/&quot;>&lt;tns:CustomMessage>&lt;Message>&lt;xsl:copy-of select=&quot;$CipherFTLMessage/ftl:FTLMessage/ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;$CipherFTLMessage/ftl:FTLMessage/@*&quot;/>&lt;xsl:copy-of select=&quot;$CipherFTLMessage/ftl:FTLMessage/node()&quot;/>&lt;/Message>&lt;/tns:CustomMessage>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.ftl.publisher"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:ftl="http://ns.tibco.com/bw/palette/ftl"
-                            xmlns:v1="http://www.example.org/xsd/interface/util/ftl/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <attributeBindings bindingType="scaProperty"
-                                eAttributeName="endpoint" processProperty="ftlEndpoint"/>
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/ftl#//FTLPublisher"/>
-                                    <value format="custom"
-                                    ftlRealmServerConnection="ftlProperty"
-                                    inputElementQName="v1:FTLMessageType" xsi:type="ftl:FTLPublisher"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity
-                    inputVariable="CipherFTLMessage-input"
-                    name="CipherFTLMessage"
-                    outputVariable="CipherFTLMessage"
-                    tibex:xpdlId="85b17159-2a05-4f9d-bdb1-73a13079ef5c"
+                <tibex:extActivity inputVariable="FTLRequestReply-input"
+                    name="FTLRequestReply"
+                    outputVariable="FTLRequestReply"
+                    tibex:xpdlId="845733e6-6639-42ed-a35e-81c5bda0bb2b"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="StartToCipherFTLMessage"/>
+                        <bpws:target linkName="StartToFTLRequestReply_FTLRequestReply"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="CipherFTLMessageToFTLPublisher"/>
+                        <bpws:source linkName="FTLRequestReplyToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;CipherFTLMessage-input&quot; match=&quot;/&quot;>&lt;ftl:CipherFTLRequestReplyRequest>&lt;ftl:Channel>&lt;xsl:value-of select=&quot;$Start/ftl:FTLRequest/ftl:Channel&quot;/>&lt;/ftl:Channel>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest/ftl:Payload&quot;/>&lt;/ftl:CipherFTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;FTLRequestReply-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$Start/tns:FTLRequestReplyRequest&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
-                        subProcessName="UTIL.FTL.FTLMessage.CipherFTLMessage" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                        subProcessName="UTIL.FTL.FTLRequestReply.FTLRequestReply" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:extActivity inputVariable="FTLPublish-input"
+                    name="FTLPublish" outputVariable="FTLPublish"
+                    tibex:xpdlId="23748309-4b3f-4949-9a3e-d69db4fe8e76"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="StartToFTLPublish_FTLPublish"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="FTLPublishToEnd"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;FTLPublish-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$Start/tns:FTLPublishRequest&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:CallProcess
+                        subProcessName="UTIL.FTL.FTLPublish.FTLPublish" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="Log-input"
                     name="Log"
-                    tibex:xpdlId="b14ebffd-8209-4ddc-9f9d-791b3e066c28" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="47d7e48c-e1db-4622-bb95-b1d848776eb9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="FTLPublisherToLog"/>
+                        <bpws:target linkName="StartToLog"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="LogToThrow"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error_FTLPublisher&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($_error_FTLPublisher)&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns2:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;Something Went Wrong&amp;quot;&quot;/>&lt;/message>&lt;/tns2:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -853,11 +758,11 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:throw faultName="ns4:DefaultFault"
-                faultVariable="Throw-input" name="Throw" tibex:xpdlId="7f77f96c-1a94-4fa0-a1c3-89c31fd79bba">
+            <bpws:throw faultName="ns3:DefaultFault"
+                faultVariable="Throw-input" name="Throw" tibex:xpdlId="efff9e22-4144-4a7f-87d4-40415a3ae684">
                 <tibex:inputBindings>
                     <tibex:partBinding
-                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error_FTLPublisher&quot;/>&lt;xsl:template name=&quot;Throw-input&quot; match=&quot;/&quot;>&lt;tns2:DefaultFault>&lt;message>&lt;xsl:value-of select=&quot;tib:render-xml($_error_FTLPublisher)&quot;/>&lt;/message>&lt;/tns2:DefaultFault>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Throw-input&quot; match=&quot;/&quot;>&lt;tns3:DefaultFault>&lt;message>&lt;xsl:value-of select=&quot;&amp;quot;Something went wrong&amp;quot;&quot;/>&lt;/message>&lt;/tns3:DefaultFault>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                 </tibex:inputBindings>
                 <bpws:targets>
                     <bpws:target linkName="LogToThrow"/>

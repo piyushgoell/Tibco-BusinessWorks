@@ -21,5 +21,6 @@ Provide-Capability: com.tibco.bw.module; name="LIB_UTIL_FTL-implement.module"; v
  com.tibco.bw.processes; name="UTIL.FTL.FTLBatchExecutor",
  com.tibco.bw.processes; name="UTIL.FTL.FTLMessage",
  com.tibco.bw.processes; name="UTIL.FTL.FTLPublish",
- com.tibco.bw.processes; name="UTIL.FTL.FTLRequestReply"
+ com.tibco.bw.processes; name="UTIL.FTL.FTLRequestReply",
+ com.tibco.bw.processes; name="UTIL.FTL.SUB"
 TIBCO-BW-Version: 6.6.0 V41 2019-11-07

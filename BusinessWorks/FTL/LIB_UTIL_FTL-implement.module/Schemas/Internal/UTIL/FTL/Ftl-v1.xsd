@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/internal/util/ftl/v1"
-	xmlns:ftl="http://www.example.org/xsd/internal/util/ftl/v1" elementFormDefault="qualified">
+	xmlns:ftl="http://www.example.org/xsd/internal/util/ftl/v1" elementFormDefault="qualified" xmlns:ftl1="http://www.example.org/xsd/interface/util/ftl/v1">
 	
-	<element name="Channel" type="string"/>
+    <import namespace="http://www.example.org/xsd/interface/util/ftl/v1" schemaLocation="../../../Interface/UTIL/FTL/Ftl-v1.xsd"/>
+    <element name="Channel" type="string"/>
 	<element name="Payload" type="anyType"/>
 	<element name="Message" type="base64Binary"/>
 	<element name="BatchExecutionSize" type="integer"/>
@@ -11,9 +12,10 @@
 	
 	<element name="PerformPreExecutionPlanning">
 		<complexType>
-			<sequence>
+			<sequence>		
 				<element ref="ftl:BatchExecutionSize" />
 				<element ref="ftl:RequestCount" />
+				<element ref="ftl1:FTLOperation"/>
 			</sequence>
 		</complexType>
 	</element>
@@ -26,4 +28,24 @@
 			</sequence>
 		</complexType>
 	</element>
+	
+	<element name="FTLExecutorRequest" type="ftl:FTLExecutorRequestType"/>
+	<complexType name="FTLExecutorRequestType">
+		<sequence>
+			<choice>
+				<element ref="ftl1:FTLRequestReplyRequest" minOccurs="0"/>
+				<element ref="ftl1:FTLPublishRequest" minOccurs="0"/>
+			</choice>
+		</sequence>
+	</complexType>
+	
+	<element name="FTLExecutorResponse" type="ftl:FTLExecutorResponseType"/>
+	<complexType name="FTLExecutorResponseType">
+		<sequence>
+			<choice>
+				<element ref="ftl1:FTLRequestReplyResponse" minOccurs="0"/>
+				<element ref="ftl1:FTLPublishResponse" minOccurs="0"/>
+			</choice>
+		</sequence>
+	</complexType>
 </schema>

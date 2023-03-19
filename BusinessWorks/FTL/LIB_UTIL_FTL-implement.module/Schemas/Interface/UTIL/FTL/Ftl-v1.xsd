@@ -1,132 +1,140 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/interface/util/ftl/v1"
-	xmlns:ftl="http://www.example.org/xsd/interface/util/ftl/v1" elementFormDefault="qualified">
-	
-	<element name="Endpoint" type="string"/>
-	<element name="Channel" type="string"/>
-	<element name="ActivityTimeoutMsec" type="long"/>
-	<element name="Message" type="base64Binary"/>
-	<element name="BatchExecutionSize" type="long"/>
-	
-	<element name="FTLMessage" type="ftl:FTLMessageType"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ftl="http://www.example.org/xsd/interface/util/ftl/v1"
+	elementFormDefault="qualified" targetNamespace="http://www.example.org/xsd/interface/util/ftl/v1">
+
+	<element name="Endpoint" type="string" />
+	<element name="Channel" type="string" />
+	<element name="ActivityTimeoutMsec" type="long" />
+	<element name="Message" type="base64Binary" />
+	<element name="BatchExecutionSize" type="long" />
+
+	<element name="FTLMessage" type="ftl:FTLMessageType" />
 	<complexType name="FTLMessageType">
 		<sequence>
-			<element ref="ftl:Channel"/>
-			<element ref="ftl:Message"/>
+			<element ref="ftl:Channel" />
+			<element ref="ftl:Message" />
 		</sequence>
 	</complexType>
-	
-	<element name="Payload" type="ftl:PayloadType"/>
+
+	<element name="Payload" type="ftl:PayloadType" />
 	<complexType name="PayloadType">
 		<sequence>
-			<any processContents="skip"/>
+			<any processContents="skip" />
 		</sequence>
 	</complexType>
-	
-	<element name="Header" type="ftl:HeaderType"/>
+
+	<element name="Header" type="ftl:HeaderType" />
 	<complexType name="HeaderType">
 		<sequence>
-			<any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+			<any maxOccurs="unbounded" minOccurs="0" processContents="skip" />
 		</sequence>
 		<anyAttribute namespace="##other" processContents="lax" />
 	</complexType>
-	
-	<element name="FTLRequest" type="ftl:FTLRequestType"/>
+
+	<element name="FTLRequest" type="ftl:FTLRequestType" />
 	<complexType name="FTLRequestType">
 		<sequence>
-			<element minOccurs="0" ref="ftl:Endpoint"/>
-			<element minOccurs="1" ref="ftl:Channel"/>
-			<element minOccurs="0" ref="ftl:ActivityTimeoutMsec"/>
-			<element minOccurs="1" ref="ftl:Payload"/>
+			<element minOccurs="0" ref="ftl:Endpoint" />
+			<element minOccurs="1" ref="ftl:Channel" />
+			<element minOccurs="0" ref="ftl:ActivityTimeoutMsec" />
+			<element minOccurs="1" ref="ftl:Payload" />
 		</sequence>
 	</complexType>
-	
-	<element name="FTLResponse" type="ftl:FTLResponseType"/>
+
+	<element name="FTLResponse" type="ftl:FTLResponseType" />
 	<complexType name="FTLResponseType">
 		<sequence>
-			<element minOccurs="1" ref="ftl:Payload"/>
+			<element minOccurs="1" ref="ftl:Payload" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="FTLRequestReplyRequestType">
 		<sequence>
-			<element ref="ftl:FTLRequest"/>
+			<element ref="ftl:FTLRequest" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="FTLRequestReplyResponseType">
 		<sequence>
-			<element minOccurs="1" ref="ftl:FTLResponse"/>
+			<element minOccurs="1" ref="ftl:FTLResponse" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="FTLPublishRequestType">
 		<sequence>
-			<element ref="ftl:FTLRequest"/>
+			<element ref="ftl:FTLRequest" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="FTLPublishResponseType">
 		<sequence>
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="FTLBatchExecutorRequestType">
 		<sequence>
-			<element ref="ftl:FTLRequest" minOccurs="1" maxOccurs="unbounded"/>
-			<element ref="ftl:BatchExecutionSize" minOccurs="0"/>
+			<element maxOccurs="unbounded" minOccurs="1" ref="ftl:FTLRequest" />
+			<element minOccurs="0" ref="ftl:FTLOperation" />
+			<element minOccurs="0" ref="ftl:BatchExecutionSize" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="FTLBatchExecutorResponseType">
 		<sequence>
-			<element ref="ftl:FTLResponse" minOccurs="0" maxOccurs="unbounded"/>
+			<element maxOccurs="unbounded" minOccurs="0" ref="ftl:FTLResponse" />
 		</sequence>
 	</complexType>
-	
-	
-	
-	
+
+
+	<element fixed="RequestReply" name="FTLOperation" type="ftl:FTLOperationType" />
+	<simpleType name="FTLOperationType">
+		<restriction base="string">
+			<enumeration value="RequestReply" />
+			<enumeration value="Publisher" />
+		</restriction>
+	</simpleType>
+
+
 	<complexType name="CipherFTLMessageRequestType">
 		<sequence>
-			<element ref="ftl:Channel"/>
+			<element ref="ftl:Channel" />
 			<element minOccurs="0" ref="ftl:Header" />
-			<element ref="ftl:Payload"/>
+			<element ref="ftl:Payload" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="CipherFTLMessageResponseType">
 		<sequence>
-			<element ref="ftl:FTLMessage"/>
+			<element ref="ftl:FTLMessage" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="DecipherFTLMessageRequestType">
 		<sequence>
-			<element ref="ftl:FTLMessage"/>
+			<element ref="ftl:FTLMessage" />
 		</sequence>
 	</complexType>
-	
+
 	<complexType name="DecipherFTLMessageResponseType">
 		<sequence>
 			<element minOccurs="0" ref="ftl:Header" />
-			<element ref="ftl:Payload"/>
+			<element ref="ftl:Payload" />
 		</sequence>
 	</complexType>
-	
-	<element name="FTLPublishRequest" type="ftl:FTLPublishRequestType"/>
-	<element name="FTLPublishResponse" type="ftl:FTLPublishResponseType"/>
-	
-	<element name="FTLRequestReplyRequest" type="ftl:FTLRequestReplyRequestType"/>
-	<element name="FTLRequestReplyResponse" type="ftl:FTLRequestReplyResponseType"/>
-	
-	<element name="FTLBatchExecutorRequest" type="ftl:FTLBatchExecutorRequestType"/>
-	<element name="FTLBatchExecutorResponse" type="ftl:FTLBatchExecutorResponseType"/>
-	
-	<element name="CipherFTLRequestReplyRequest" type="ftl:CipherFTLMessageRequestType"/>
-	<element name="CipherFTLRequestReplyResponse" type="ftl:CipherFTLMessageResponseType"/>
-	
-	<element name="DecipherFTLRequestReplyRequest" type="ftl:DecipherFTLMessageRequestType"/>
-	<element name="DecipherFTLRequestReplyResponse" type="ftl:DecipherFTLMessageResponseType"/>
+
+	<element name="FTLPublishRequest" type="ftl:FTLPublishRequestType" />
+	<element name="FTLPublishResponse" type="ftl:FTLPublishResponseType" />
+
+	<element name="FTLRequestReplyRequest" type="ftl:FTLRequestReplyRequestType" />
+	<element name="FTLRequestReplyResponse" type="ftl:FTLRequestReplyResponseType" />
+
+	<element name="FTLBatchExecutorRequest" type="ftl:FTLBatchExecutorRequestType" />
+	<element name="FTLBatchExecutorResponse" type="ftl:FTLBatchExecutorResponseType" />
+
+	<element name="CipherFTLRequestReplyRequest" type="ftl:CipherFTLMessageRequestType" />
+	<element name="CipherFTLRequestReplyResponse" type="ftl:CipherFTLMessageResponseType" />
+
+	<element name="DecipherFTLRequestReplyRequest" type="ftl:DecipherFTLMessageRequestType" />
+	<element name="DecipherFTLRequestReplyResponse" type="ftl:DecipherFTLMessageResponseType" />
 
 </schema>
