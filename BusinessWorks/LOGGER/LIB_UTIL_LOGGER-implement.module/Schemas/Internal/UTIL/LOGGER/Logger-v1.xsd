@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/internal/util/logger/logger/v1" xmlns:logger="http://www.example.org/xsd/internal/util/logger/logger/v1" elementFormDefault="qualified">
+	
+	<element name="StartTimsestamp" type="long"/>
+	<element name="TransactionID" type="string"/>
+	<element name="CorrelationID" type="string"/>
+	<element name="LogSequence" type="long"/>
+	
+	<complexType name="LogInfo">
+		<sequence>
+			<element ref="logger:StartTimsestamp"/>
+			<element ref="logger:LogSequence"/>
+		</sequence>
+	</complexType>
+</schema>

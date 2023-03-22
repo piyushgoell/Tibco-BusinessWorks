@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="IsFrameworkInitialised" type="{http://www.w3.org/2001/XMLSchema}boolean" initialValueMode="literal" initialValue="false"/>
+    <moduleSharedVariable name="loggingConfigLastRead" type="{http://www.w3.org/2001/XMLSchema}integer" initialValueMode="literal" initialValue="0"/>
+    <moduleSharedVariable name="loggingConfigLastChecked" type="{http://www.w3.org/2001/XMLSchema}integer" initialValueMode="literal" initialValue="0"/>
+    <moduleSharedVariable name="HousekeepingNextDueDate" type="{http://www.w3.org/2001/XMLSchema}integer" initialValueMode="literal" initialValue="0"/>
+    <moduleSharedVariable name="DefaultConfigFile" type="{http://www.example.org/xsd/resource/util/logger/configfile/v1}ConfigFile" initialValueMode="textfile" initialValue="Resources/UTIL/LOGGER/DefaultConfigFile/ConfigFile-v1.xml"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/resource/util/logger/configfile/v1" location="../Schemas/Resource/UTIL/LOGGER/ConfigFile-v1.xsd"/>
+</msv:DocumentRoot>

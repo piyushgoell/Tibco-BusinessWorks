@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/xsd/resource/util/logger/configfile/v1"
+	xmlns:config="http://www.example.org/xsd/resource/util/logger/configfile/v1"
+	elementFormDefault="qualified">
+
+	<element name="ConfigFile" type="config:ConfigFileType" />
+	<complexType name="ConfigFileType">
+		<sequence>
+			<element name="Logger" type="config:LoggerType" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="LoggerType">
+		<sequence>
+			<element name="Name" type="config:LogNameType" />
+			<element name="Level" type="config:LogLevelType" />
+		</sequence>
+	</complexType>
+
+
+	<simpleType name="LogNameType">
+		<restriction base="string">
+			<enumeration value="AUDIT" />
+			<enumeration value="TRACE" />
+			<enumeration value="LOG" />
+		</restriction>
+	</simpleType>
+
+
+	<simpleType name="LogLevelType">
+		<restriction base="string">
+			<enumeration value="OFF" />
+			<enumeration value="ON" />
+			<enumeration value="PAYLOAD" />
+		</restriction>
+	</simpleType>
+
+</schema>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/interface/util/logger/logger/v1" xmlns:logger="http://www.example.org/xsd/interface/util/logger/logger/v1" elementFormDefault="qualified">
+
+
+	<element name="AuditStartRequest" type="logger:AuditStartRequestType"/>
+	<complexType name="AuditStartRequestType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="AuditStartResponse" type="logger:AuditStartResponseType"/>
+	<complexType name="AuditStartResponseType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="AuditEnd" type="logger:AuditEndType"/>
+	<complexType name="AuditEndType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="TraceStart" type="logger:TraceStartType"/>
+	<complexType name="TraceStartType" >
+		<sequence>
+			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="TraceEnd" type="logger:TraceEndType"/>
+	<complexType name="TraceEndType" >
+		<sequence>
+			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="Payload" type="logger:PayloadType"/>
+	<complexType name="PayloadType">
+		<sequence>
+			<any processContents="skip"/>
+		</sequence>
+	</complexType>
+	
+
+</schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_1TZc8MZLEe2A6sAnZc1ohQ" targetNamespace="http://tns.tibco.com/bw/composite/LIB_UTIL_LOGGER-implement.module" name="LIB_UTIL_LOGGER-implement.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_1Z3RUMZLEe2A6sAnZc1ohQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1aF60MZLEe2A6sAnZc1ohQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1aMBcMZLEe2A6sAnZc1ohQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1ab5EMZLEe2A6sAnZc1ohQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1ahYoMZLEe2A6sAnZc1ohQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1aoGUMZLEe2A6sAnZc1ohQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1atl4MZLEe2A6sAnZc1ohQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1azsgMZLEe2A6sAnZc1ohQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_1a5zIMZLEe2A6sAnZc1ohQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_vrRq8MZYEe2A6sAnZc1ohQ" name="/SERVICES/LIB_UTIL_LOGGER/LOGGER/configFile" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+</sca:composite>

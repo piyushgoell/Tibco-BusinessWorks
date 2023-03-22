@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config:ConfigFile xmlns:config="http://www.example.org/xsd/resource/util/logger/configfile/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/xsd/resource/util/logger/configfile/v1 ConfigFile-v1.xsd ">
+  <config:Logger>
+    <config:Name>AUDIT</config:Name>
+    <config:Level>ON</config:Level>
+  </config:Logger>
+  <config:Logger>
+    <config:Name>TRACE</config:Name>
+    <config:Level>ON</config:Level>
+  </config:Logger>
+  <config:Logger>
+    <config:Name>LOG</config:Name>
+    <config:Level>OFF</config:Level>
+  </config:Logger>
+</config:ConfigFile>
