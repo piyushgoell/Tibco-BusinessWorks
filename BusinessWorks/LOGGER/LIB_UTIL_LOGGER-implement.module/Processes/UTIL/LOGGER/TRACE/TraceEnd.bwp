@@ -3,10 +3,13 @@
     suppressJoinFailure="yes"
     targetNamespace="http://xmlns.example.com/20230319202441"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
     xmlns:ns0="www.tibco.com/plugin/java/JavaInvokeActivityInput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityInput"
     xmlns:ns1="www.tibco.com/plugin/java/JavaInvokeActivityOutput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityOutput"
+    xmlns:ns10="http://www.example.org/xsd/interface/util/logger/logger/v1"
+    xmlns:ns11="http://www.example.org/xsd/internal/util/logger/logger/v1"
     xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+6fb4dde2-bb04-467f-b2f7-c9987715e4cd"
     xmlns:ns3="www.tibco.com/plugin/java/JavaInvokeActivityInput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityInput"
     xmlns:ns4="www.tibco.com/plugin/java/JavaInvokeActivityOutput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityOutput"
@@ -127,7 +130,8 @@
                         block="extension restriction substitution"
                         form="unqualified" minOccurs="0"
                         name="CustomJobId" type="xs:string"/>
-                    <!--xs:element name="RestartedFromCheckpoint" form="unqualified" block="extension restriction substitution" type="xs:boolean"/-->
+                    <!--xs:element name="RestartedFromCheckpoint" form="unqualified" block="extension 
+						restriction substitution" type="xs:boolean"/ -->
                     <xs:element
                         block="extension restriction substitution"
                         form="unqualified" maxOccurs="unbounded"
@@ -180,209 +184,14 @@
             </complexType>
             <element name="DuplicateKeyException" type="tns:DuplicateKeyExceptionType"/>
         </schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityInput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityInput">
-            <complexType name="MutTypeMethodParameters">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="name" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
-            <complexType name="MutTypeMethodInputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityOutput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityOutput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityOutput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityOutput">
-            <element name="JavaInvokeActivityOutput" type="tns:MutTypeMethodOutputRoot"/>
-            <complexType name="MutTypeMethodOutputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="0" name="MethodReturnValue" type="int"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://www.example.org/JavaExceptions"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/JavaExceptions">
-            <element name="JavaException" type="tns:JavaExceptionType"/>
-            <complexType name="JavaExceptionType">
-                <sequence>
-                    <element name="msg" type="string"/>
-                    <element minOccurs="0" name="msgCode" type="string"/>
-                </sequence>
-            </complexType>
-            <complexType name="InvocationExceptionType">
-                <complexContent>
-                    <extension base="tns:JavaExceptionType">
-                        <sequence>
-                            <element name="methodName" type="string"/>
-                            <element name="exceptionClassName" type="string"/>
-                            <element name="exceptionMessage" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="InvocationException" type="tns:InvocationExceptionType"/>
-            <complexType name="ConversionExceptionType">
-                <complexContent>
-                    <extension base="tns:JavaExceptionType">
-                        <sequence>
-                            <element name="conversionError" type="string"/>
-                        </sequence>
-                    </extension>
-                </complexContent>
-            </complexType>
-            <element name="ConversionException" type="tns:ConversionExceptionType"/>
-            <element name="JavaToXMLConversionException" type="tns:ConversionExceptionType"/>
-            <element name="XMLToJavaConversionException" type="tns:ConversionExceptionType"/>
-            <element name="JavaEventSourceException" type="tns:JavaExceptionType"/>
-            <element name="JavaEventSourceIllegalOperationException" type="tns:JavaExceptionType"/>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+6fb4dde2-bb04-467f-b2f7-c9987715e4cd"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://www.example.org/JavaExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+6fb4dde2-bb04-467f-b2f7-c9987715e4cd">
-            <import namespace="http://www.example.org/JavaExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
-                </choice>
-            </complexType>
-        </schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityInput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityInput">
-            <complexType name="MutTypeMethodParameters">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="LogName" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="TransactionID" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="CorrelationID" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="OperationContext" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="ApplicationName" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="logSequence" type="int"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="elapsedTime" type="long"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="durationTime" type="long"/>
-                </sequence>
-            </complexType>
-            <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
-            <complexType name="MutTypeMethodInputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityOutput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityOutput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityOutput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityOutput">
-            <element name="JavaInvokeActivityOutput" type="tns:MutTypeMethodOutputRoot"/>
-            <complexType name="MutTypeMethodOutputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="0" name="MethodReturnValue" type="string"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://www.example.org/JavaExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc">
-            <import namespace="http://www.example.org/JavaExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
-                </choice>
-            </complexType>
-        </schema>
-        <xs:schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="http://www.tibco.com/pe/WriteToLogActivitySchema"
-            xmlns:tns="http://www.tibco.com/pe/WriteToLogActivitySchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xs:complexType name="LogParametersType">
-                <xs:sequence>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="msgCode" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="loggerName" type="xs:string"/>
-                    <xs:element form="unqualified" minOccurs="0"
-                        name="logLevel" type="xs:string"/>
-                    <xs:element form="unqualified" name="message" type="xs:string"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="ActivityInput" type="tns:LogParametersType"/>
-        </xs:schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+44549c55-77c8-4161-b775-990917b047eb+JavaInvokeActivityInput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityInput+44549c55-77c8-4161-b775-990917b047eb+JavaInvokeActivityInput">
-            <complexType name="MutTypeMethodParameters">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="LoggerId" type="string"/>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="context" type="string"/>
-                </sequence>
-            </complexType>
-            <element name="JavaInvokeActivityInput" type="tns:MutTypeMethodInputRoot"/>
-            <complexType name="MutTypeMethodInputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="1" name="MethodParameters" type="tns:MutTypeMethodParameters"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema attributeFormDefault="unqualified"
-            elementFormDefault="qualified"
-            targetNamespace="www.tibco.com/plugin/java/JavaInvokeActivityOutput+44549c55-77c8-4161-b775-990917b047eb+JavaInvokeActivityOutput"
-            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="www.tibco.com/plugin/java/JavaInvokeActivityOutput+44549c55-77c8-4161-b775-990917b047eb+JavaInvokeActivityOutput">
-            <element name="JavaInvokeActivityOutput" type="tns:MutTypeMethodOutputRoot"/>
-            <complexType name="MutTypeMethodOutputRoot">
-                <sequence>
-                    <element form="unqualified" maxOccurs="1"
-                        minOccurs="0" name="MethodReturnValue" type="long"/>
-                </sequence>
-            </complexType>
-        </schema>
-        <schema elementFormDefault="unqualified"
-            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+44549c55-77c8-4161-b775-990917b047eb"
-            xmlns="http://www.w3.org/2001/XMLSchema"
-            xmlns:Q1="http://www.example.org/JavaExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+44549c55-77c8-4161-b775-990917b047eb">
-            <import namespace="http://www.example.org/JavaExceptions"/>
-            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
-            <complexType name="ActivityErrorDataType">
-                <choice>
-                    <element maxOccurs="1" minOccurs="0" ref="Q1:InvocationException"/>
-                </choice>
-            </complexType>
-        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="piyus"
         createdOn="Sun Mar 19 20:24:41 IST 2023" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
-    <tibex:ProcessInterface context="" input="" output=""/>
+    <tibex:ProcessInterface context=""
+        input="{http://www.example.org/xsd/interface/util/logger/logger/v1}TraceEndRequest" output="{http://www.example.org/xsd/interface/util/logger/logger/v1}TraceEndResponse"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -471,42 +280,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="981"
-                                    xsi:type="notation:Bounds" y="-1"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="118"
+                                    <layoutConstraint x="338"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <children type="4002">
@@ -540,219 +314,9 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="307"
-                                    xsi:type="notation:Bounds" y="115"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="413"
-                                    xsi:type="notation:Bounds" y="115"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="512"
-                                    xsi:type="notation:Bounds" y="115"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint x="756"
-                                    xsi:type="notation:Bounds" y="108"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.7"/>
-                                    <layoutConstraint x="873"
-                                    xsi:type="notation:Bounds" y="108"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
-                                    <layoutConstraint x="621"
-                                    xsi:type="notation:Bounds" y="115"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
-                                    <layoutConstraint x="203"
-                                    xsi:type="notation:Bounds" y="115"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
+                                    <layoutConstraint x="181"
+                                    xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -808,7 +372,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 3, -152, -21]$[153, 21, -24, -3]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -819,98 +383,7 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, -2, -260, 21]$[261, -21, -24, 2]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
-            <bendpoints
-                points="[0, 25, -84, -72]$[0, 113, -84, 16]$[61, 113, -23, 16]" xsi:type="notation:RelativeBendpoints"/>
-            <targetAnchor id="(0.4796747967479675,0.17333333333333334)" xsi:type="notation:IdentityAnchor"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.3"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
-            <bendpoints
-                points="[25, -22, -111, 100]$[112, -100, -24, 22]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
-            <bendpoints points="[25, -14, -78, 44]$[79, -44, -24, 14]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.9"/>
-            <bendpoints points="[25, 0, -79, 0]$[80, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 6, -138, 0]$[139, 0, -24, -6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -928,17 +401,14 @@
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
             namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+44549c55-77c8-4161-b775-990917b047eb+JavaInvokeActivityInput" prefix="tns3"/>
+        <tibex:namespaceItem
+            namespace="http://www.example.org/xsd/interface/util/logger/logger/v1" prefix="logger"/>
     </tibex:NamespaceRegistry>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/logger/logger/v1"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/internal/util/logger/logger/v1"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:JavaInvokeActivityInput"
-            name="IsTraceLoggingEnabled-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:JavaInvokeActivityOutput"
-            name="IsTraceLoggingEnabled" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:ActivityErrorData"
-            name="_error_IsTraceLoggingEnabled" sca-bpel:internal="true"/>
-        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
         <bpws:variable name="JavaGlobalInstanceProperty"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
@@ -947,26 +417,13 @@
                 <bpws:literal>UTIL.LOGGER.LOGGERGLOBALINSTANCE.Logger</bpws:literal>
             </bpws:from>
         </bpws:variable>
-        <bpws:variable name="GetLoggerId" sca-bpel:internal="true" type="xsd:string"/>
-        <bpws:variable name="GetLogSequence" sca-bpel:internal="true" type="xsd:integer"/>
-        <bpws:variable name="SetLogSequence-input"
-            sca-bpel:internal="true" type="xsd:integer"/>
-        <bpws:variable name="SetLogSequence" sca-bpel:internal="true" type="xsd:integer"/>
-        <bpws:variable element="ns3:JavaInvokeActivityInput"
-            name="ConstructMetadataMessage-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns4:JavaInvokeActivityOutput"
-            name="ConstructMetadataMessage" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityErrorData"
-            name="_error_ConstructMetadataMessage" sca-bpel:internal="true"/>
-        <bpws:variable element="ns6:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns7:JavaInvokeActivityInput"
-            name="CaptureEnd-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:JavaInvokeActivityOutput"
-            name="CaptureEnd" sca-bpel:internal="true"/>
-        <bpws:variable element="ns9:ActivityErrorData"
-            name="_error_CaptureEnd" sca-bpel:internal="true"/>
-        <bpws:variable name="GetJobStartTimestamp"
-            sca-bpel:internal="true" type="xsd:integer"/>
+        <bpws:variable name="ProcessPackagePath" type="xsd:string"/>
+        <bpws:variable element="ns10:TraceEndRequest" name="Start"
+            sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable element="ns11:LogInfoRequest"
+            name="LogInfo-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns10:TraceEndResponse" name="End-input"
+            sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -979,24 +436,16 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToJavaInvoke" tibex:linkType="SUCCESS"/>
-                <bpws:link name="IsTraceLoggingEnabledToEnd" tibex:linkType="SUCCESSWITHCONDITION"/>
-                <bpws:link
-                    name="IsTraceLoggingEnabledToGetSharedVariable1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
-                <bpws:link name="GetLoggerIdToGetSharedVariable" tibex:linkType="SUCCESS"/>
-                <bpws:link name="GetLogSequenceToSetSharedVariable" tibex:linkType="SUCCESS"/>
-                <bpws:link name="ConstructMetadataMessageToLog" tibex:linkType="SUCCESS"/>
-                <bpws:link name="LogToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="SetLogSequenceToJavaInvoke1" tibex:linkType="SUCCESS"/>
-                <bpws:link name="JavaInvokeToConstructMetadataMessage" tibex:linkType="SUCCESS"/>
-                <bpws:link name="GetSharedVariableToGetLoggerId" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToLogInfo" tibex:linkType="SUCCESS"/>
+                <bpws:link name="LogInfoToEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="b57c3156-72b2-4289-99d1-3ba9c777e5cd" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="b57c3156-72b2-4289-99d1-3ba9c777e5cd"
+                    variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToJavaInvoke"/>
+                        <bpws:source linkName="StartToLogInfo"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1004,12 +453,16 @@
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension name="End"
+                <tibex:activityExtension inputVariable="End-input"
+                    name="End"
                     tibex:xpdlId="897b8309-177d-4c10-a20e-8033be068ab2" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="IsTraceLoggingEnabledToEnd"/>
-                        <bpws:target linkName="LogToEnd"/>
+                        <bpws:target linkName="LogInfoToEnd"/>
                     </bpws:targets>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;> &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;> &lt;logger:TraceEndResponse/>&lt;/xsl:template> &lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.internal.end"
@@ -1027,255 +480,22 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="IsTraceLoggingEnabled-input"
-                    name="IsTraceLoggingEnabled"
-                    outputVariable="IsTraceLoggingEnabled"
-                    tibex:xpdlId="6fb4dde2-bb04-467f-b2f7-c9987715e4cd" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                <tibex:extActivity inputVariable="LogInfo-input"
+                    name="LogInfo"
+                    tibex:xpdlId="2a426d77-56ca-4728-88cb-53c6f1a78cfd"
+                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="StartToJavaInvoke"/>
+                        <bpws:target linkName="StartToLogInfo"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="IsTraceLoggingEnabledToEnd">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="$IsTraceLoggingEnabled/MethodReturnValue=0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$IsTraceLoggingEnabled/MethodReturnValue=0]]></bpws:transitionCondition>
-                        </bpws:source>
-                        <bpws:source linkName="IsTraceLoggingEnabledToGetSharedVariable1">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
-                        </bpws:source>
+                        <bpws:source linkName="LogInfoToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+6fb4dde2-bb04-467f-b2f7-c9987715e4cd+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;IsTraceLoggingEnabled-input&quot; match=&quot;/&quot;>&lt;tns:JavaInvokeActivityInput>&lt;MethodParameters>&lt;name>&lt;xsl:value-of select=&quot;&amp;quot;TRACE&amp;quot;&quot;/>&lt;/name>&lt;/MethodParameters>&lt;/tns:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/internal/util/logger/logger/v1&quot; xmlns:logger1=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;LogInfo-input&quot; match=&quot;/&quot;>&lt;logger:LogInfoRequest>&lt;logger:LoggerName>&lt;xsl:value-of select=&quot;&amp;quot;TRACE-END&amp;quot;&quot;/>&lt;/logger:LoggerName>&lt;xsl:if test=&quot;exists($Start/logger1:Payload/*)&quot;>&lt;logger:Payload>&lt;xsl:copy-of select=&quot;$Start/logger1:Payload/*&quot;/>&lt;/logger:Payload>&lt;/xsl:if>&lt;/logger:LogInfoRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.java.javamethod"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:java="http://ns.tibco.com/bw/palette/java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
-                                    <value
-                                    className="com.example.Logger.Log"
-                                    isNew="true"
-                                    isNewActivity="true"
-                                    isStaticMethod="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
-                                    methodName="isLoggingEnabled"
-                                    methodReturn="int" xsi:type="java:JavaMethod">
-                                    <methodParameter
-                                    paramName="name" paramType="string"/>
-                                    </value>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity name="GetLoggerId"
-                    outputVariable="GetLoggerId"
-                    tibex:xpdlId="edd8a297-ce78-4546-bfbe-c7993278e3b1"
-                    type="bw.internal.getSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="GetSharedVariableToGetLoggerId"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="GetLoggerIdToGetSharedVariable"/>
-                    </bpws:sources>
-                    <tibex:GetSharedVariable inline="true"
-                        variableName="LoggerId" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                </tibex:extActivity>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity name="GetLogSequence"
-                    outputVariable="GetLogSequence"
-                    tibex:xpdlId="c86a92ed-2a40-4014-b505-c13aca23fb3d"
-                    type="bw.internal.getSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="GetLoggerIdToGetSharedVariable"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="GetLogSequenceToSetSharedVariable"/>
-                    </bpws:sources>
-                    <tibex:GetSharedVariable inline="true"
-                        variableName="logSequence" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                </tibex:extActivity>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity inputVariable="SetLogSequence-input"
-                    name="SetLogSequence"
-                    outputVariable="SetLogSequence"
-                    tibex:xpdlId="0d42644b-f41d-4961-a3ff-4d14ea915513"
-                    type="bw.internal.setSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="GetLogSequenceToSetSharedVariable"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="SetLogSequenceToJavaInvoke1"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="$GetLogSequence + 1" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                    </tibex:inputBindings>
-                    <tibex:SetSharedVariable inline="true"
-                        variableName="logSequence" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                </tibex:extActivity>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="ConstructMetadataMessage-input"
-                    name="ConstructMetadataMessage"
-                    outputVariable="ConstructMetadataMessage"
-                    tibex:xpdlId="415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="JavaInvokeToConstructMetadataMessage"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="ConstructMetadataMessageToLog"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+415ff3e9-69fd-4a6f-b2ac-d87b2b36cdfc+JavaInvokeActivityInput&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; xmlns:bw=&quot;http://www.tibco.com/bw/xpath/bw-custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;GetLoggerId&quot;/>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:param name=&quot;SetLogSequence&quot;/>&lt;xsl:param name=&quot;CaptureEnd&quot;/>&lt;xsl:param name=&quot;GetJobStartTimestamp&quot;/>&lt;xsl:template name=&quot;ConstructMetadataMessage-input&quot; match=&quot;/&quot;>&lt;tns2:JavaInvokeActivityInput>&lt;MethodParameters>&lt;LogName>&lt;xsl:value-of select=&quot;&amp;quot;TRACE-END&amp;quot;&quot;/>&lt;/LogName>&lt;TransactionID>&lt;xsl:value-of select=&quot;$GetLoggerId&quot;/>&lt;/TransactionID>&lt;CorrelationID>&lt;xsl:value-of select=&quot;tib:uuid()&quot;/>&lt;/CorrelationID>&lt;OperationContext>&lt;xsl:value-of select=&quot;substring-before(tokenize(bw:getModuleProperty(&amp;quot;BW.PROCESS.STACK&amp;quot;), &amp;quot;->&amp;quot;)[last()-1], &amp;quot;/&amp;quot;)&quot;/>&lt;/OperationContext>&lt;ApplicationName>&lt;xsl:value-of select=&quot;concat($_processContext/ApplicationName,&amp;quot;:&amp;quot;,bw:getModuleProperty(&amp;quot;BW.APPLICATION.VERSION&amp;quot;))&quot;/>&lt;/ApplicationName>&lt;logSequence>&lt;xsl:value-of select=&quot;xsd:int($SetLogSequence)&quot;/>&lt;/logSequence>&lt;elapsedTime>&lt;xsl:value-of select=&quot;xsd:long(tib:timestamp() - $GetJobStartTimestamp)&quot;/>&lt;/elapsedTime>&lt;durationTime>&lt;xsl:value-of select=&quot;$CaptureEnd/MethodReturnValue&quot;/>&lt;/durationTime>&lt;/MethodParameters>&lt;/tns2:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.java.javamethod"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:java="http://ns.tibco.com/bw/palette/java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
-                                    <value
-                                    className="com.example.Logger.Log"
-                                    isNew="true"
-                                    isNewActivity="true"
-                                    isStaticMethod="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
-                                    methodName="ConstructMessageMetadata"
-                                    methodReturn="string" xsi:type="java:JavaMethod">
-                                    <methodParameter
-                                    paramName="LogName" paramType="string"/>
-                                    <methodParameter
-                                    paramName="TransactionID" paramType="string"/>
-                                    <methodParameter
-                                    paramName="CorrelationID" paramType="string"/>
-                                    <methodParameter
-                                    paramName="OperationContext" paramType="string"/>
-                                    <methodParameter
-                                    paramName="ApplicationName" paramType="string"/>
-                                    <methodParameter
-                                    paramName="logSequence" paramType="int"/>
-                                    <methodParameter
-                                    paramName="elapsedTime" paramType="long"/>
-                                    <methodParameter
-                                    paramName="durationTime" paramType="long"/>
-                                    </value>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="Log-input"
-                    name="Log"
-                    tibex:xpdlId="2249f9d1-fa43-4b9f-8d4a-a8bdec89dbf1" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="ConstructMetadataMessageToLog"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="LogToEnd"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;ConstructMetadataMessage&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns1:ActivityInput>&lt;xsl:if test=&quot;$ConstructMetadataMessage/MethodReturnValue&quot;>&lt;msgCode>&lt;xsl:value-of select=&quot;$ConstructMetadataMessage/MethodReturnValue&quot;/>&lt;/msgCode>&lt;/xsl:if>&lt;message>&lt;xsl:value-of select=&quot;''&quot;/>&lt;/message>&lt;/tns1:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.generalactivities.log"
-                            version="6.0.0.001"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value controlBy="Application"
-                                    role="Debug"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:activityExtension
-                    inputVariable="CaptureEnd-input" name="CaptureEnd"
-                    outputVariable="CaptureEnd"
-                    tibex:xpdlId="44549c55-77c8-4161-b775-990917b047eb" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="SetLogSequenceToJavaInvoke1"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="JavaInvokeToConstructMetadataMessage"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;www.tibco.com/plugin/java/JavaInvokeActivityInput+44549c55-77c8-4161-b775-990917b047eb+JavaInvokeActivityInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_processContext&quot;/>&lt;xsl:template name=&quot;JavaInvoke-input&quot; match=&quot;/&quot;>&lt;tns3:JavaInvokeActivityInput>&lt;MethodParameters>&lt;LoggerId>&lt;xsl:value-of select=&quot;$_processContext/JobId&quot;/>&lt;/LoggerId>&lt;context>&lt;xsl:value-of select=&quot;&amp;quot;ABC&amp;quot;&quot;/>&lt;/context>&lt;/MethodParameters>&lt;/tns3:JavaInvokeActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                    </tibex:inputBindings>
-                    <tibex:config>
-                        <bwext:BWActivity
-                            activityTypeID="bw.java.javamethod"
-                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                            xmlns:java="http://ns.tibco.com/bw/palette/java" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                            <activityConfig>
-                                <properties name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/java#//JavaMethod"/>
-                                    <value
-                                    className="com.example.Logger.Log"
-                                    isNew="true"
-                                    isNewActivity="true"
-                                    isStaticMethod="true"
-                                    javaGlobalInstance="JavaGlobalInstanceProperty"
-                                    methodName="CaptureEnd"
-                                    methodReturn="long" xsi:type="java:JavaMethod">
-                                    <methodParameter
-                                    paramName="LoggerId" paramType="string"/>
-                                    <methodParameter
-                                    paramName="context" paramType="string"/>
-                                    </value>
-                                </properties>
-                            </activityConfig>
-                        </bwext:BWActivity>
-                    </tibex:config>
-                </tibex:activityExtension>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity name="GetJobStartTimestamp"
-                    outputVariable="GetJobStartTimestamp"
-                    tibex:xpdlId="c508843b-ba61-40df-aaff-6f72078c30c1"
-                    type="bw.internal.getSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="IsTraceLoggingEnabledToGetSharedVariable1"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="GetSharedVariableToGetLoggerId"/>
-                    </bpws:sources>
-                    <tibex:GetSharedVariable inline="true"
-                        variableName="jobStartTimestamp" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                    <tibex:CallProcess
+                        subProcessName="UTIL.LOGGER.SUB.LOG.LogInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>

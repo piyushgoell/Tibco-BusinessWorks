@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpws:process exitOnStandardFault="no" name="UTIL.LOGGER.AUDIT.AuditEnd"
-    suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230319202415"
+<bpws:process exitOnStandardFault="no"
+    name="UTIL.LOGGER.LOG.LogExternalRequest" suppressJoinFailure="yes"
+    targetNamespace="http://xmlns.example.com/20230323130352"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-    xmlns:bw="http://www.tibco.com/bw/xpath/bw-custom-functions"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
-    xmlns:ns0="www.tibco.com/plugin/java/JavaInvokeActivityInput+3e0a9dd5-7334-4b14-a9c7-db33b2bd61d5+JavaInvokeActivityInput"
-    xmlns:ns1="www.tibco.com/plugin/java/JavaInvokeActivityOutput+3e0a9dd5-7334-4b14-a9c7-db33b2bd61d5+JavaInvokeActivityOutput"
-    xmlns:ns10="http://www.example.org/xsd/interface/util/logger/logger/v1"
-    xmlns:ns11="http://www.example.org/xsd/internal/util/logger/logger/v1"
-    xmlns:ns2="http://tns.tibco.com/bw/palette/internal/activityerror+3e0a9dd5-7334-4b14-a9c7-db33b2bd61d5"
-    xmlns:ns3="http://www.tibco.com/pe/WriteToLogActivitySchema"
-    xmlns:ns4="www.tibco.com/plugin/java/JavaInvokeActivityInput+bd01ac37-1385-4a8e-ba27-cd0970d3d4a9+JavaInvokeActivityInput"
-    xmlns:ns5="www.tibco.com/plugin/java/JavaInvokeActivityOutput+bd01ac37-1385-4a8e-ba27-cd0970d3d4a9+JavaInvokeActivityOutput"
-    xmlns:ns6="http://tns.tibco.com/bw/palette/internal/activityerror+bd01ac37-1385-4a8e-ba27-cd0970d3d4a9"
-    xmlns:ns7="www.tibco.com/plugin/java/JavaInvokeActivityInput+8fe44c06-e2ed-4f2b-b279-3d8b4531c85b+JavaInvokeActivityInput"
-    xmlns:ns8="www.tibco.com/plugin/java/JavaInvokeActivityOutput+8fe44c06-e2ed-4f2b-b279-3d8b4531c85b+JavaInvokeActivityOutput"
-    xmlns:ns9="http://tns.tibco.com/bw/palette/internal/activityerror+8fe44c06-e2ed-4f2b-b279-3d8b4531c85b"
+    xmlns:ns0="http://www.example.org/xsd/internal/util/logger/logger/v1"
+    xmlns:ns1="http://www.example.org/xsd/interface/util/logger/logger/v1"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -185,12 +174,12 @@
         </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="piyus"
-        createdOn="Sun Mar 19 20:24:15 IST 2023" description=""
+        createdOn="Thu Mar 23 13:03:52 IST 2023" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.org/xsd/interface/util/logger/logger/v1}AuditEndRequest" output="{http://www.example.org/xsd/interface/util/logger/logger/v1}AuditEndResponse"/>
+        input="{http://www.example.org/xsd/interface/util/logger/logger/v1}LogExternalRequestRequest" output="{http://www.example.org/xsd/interface/util/logger/logger/v1}LogExternalRequestResponse"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -244,8 +233,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    <layoutConstraint x="4"
+                                    xsi:type="notation:Bounds" y="16"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -279,8 +268,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="361"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    <layoutConstraint x="276"
+                                    xsi:type="notation:Bounds" y="16"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -314,8 +303,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="197"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    <layoutConstraint x="139"
+                                    xsi:type="notation:Bounds" y="16"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -330,7 +319,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="384"
-                                    width="1258" xsi:type="notation:Bounds"/>
+                                    width="515" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -339,7 +328,8 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="384" width="1261" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="365" width="444"
+                                x="30" xsi:type="notation:Bounds" y="20"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -349,8 +339,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="408" width="1261" x="1"
-                        xsi:type="notation:Bounds" y="1"/>
+                    <layoutConstraint height="409" width="519" xsi:type="notation:Bounds"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
@@ -358,7 +347,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="460" width="1603" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="460" width="860" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -371,7 +360,8 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[25, 2, -384, -30]$[385, 30, -24, -2]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, 0, -109, 13]$[111, 0, -23, 13]" xsi:type="notation:RelativeBendpoints"/>
+            <targetAnchor id="(0.4878048780487805,0.24)" xsi:type="notation:IdentityAnchor"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -382,45 +372,25 @@
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, 0, -139, 0]$[140, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+            <bendpoints points="[25, -8, -120, 0]$[121, 0, -24, 8]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
-            namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+            namespace="http://www.example.org/xsd/internal/util/logger/logger/v1" prefix="logger"/>
         <tibex:namespaceItem
-            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+bd01ac37-1385-4a8e-ba27-cd0970d3d4a9+JavaInvokeActivityInput" prefix="tns2"/>
-        <tibex:namespaceItem
-            namespace="http://www.tibco.com/bw/xpath/bw-custom-functions" prefix="bw"/>
-        <tibex:namespaceItem
-            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
-        <tibex:namespaceItem
-            namespace="www.tibco.com/plugin/java/JavaInvokeActivityInput+8fe44c06-e2ed-4f2b-b279-3d8b4531c85b+JavaInvokeActivityInput" prefix="tns"/>
-        <tibex:namespaceItem
-            namespace="http://www.example.org/xsd/interface/util/logger/logger/v1" prefix="logger"/>
-        <tibex:namespaceItem
-            namespace="http://www.example.org/xsd/internal/util/logger/logger/v1" prefix="logger1"/>
+            namespace="http://www.example.org/xsd/interface/util/logger/logger/v1" prefix="logger1"/>
     </tibex:NamespaceRegistry>
-    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/logger/logger/v1"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/internal/util/logger/logger/v1"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/logger/logger/v1"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable name="JavaGlobalInstanceProperty"
-            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
-            sca-bpel:property="yes"
-            sca-bpel:sharedResourceType="{http://ns.tibco.com/bw/palette/javasharedresource}JavaGlobalInstanceResource" type="xsd:string">
-            <bpws:from>
-                <bpws:literal>UTIL.LOGGER.LOGGERGLOBALINSTANCE.Logger</bpws:literal>
-            </bpws:from>
-        </bpws:variable>
-        <bpws:variable name="ProcessPackagePath" type="xsd:string"/>
-        <bpws:variable element="ns10:AuditEndRequest" name="Start"
-            sca-bpel:internal="true" tibex:parameter="in"/>
-        <bpws:variable element="ns10:AuditEndResponse" name="End-input"
-            sca-bpel:internal="true" tibex:parameter="out"/>
-        <bpws:variable element="ns11:LogInfoRequest"
-            name="LogInfo-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:LogInfoRequest" name="LogInfo-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:LogExternalRequestRequest"
+            name="Start" sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable element="ns1:LogExternalRequestResponse"
+            name="End-input" sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -439,7 +409,7 @@
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="e700036a-be39-471f-9fe5-14b7a5fa46bd"
+                    tibex:xpdlId="bae5e9f1-5139-4972-9eaa-0f725bf32bc8"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToLogInfo"/>
@@ -452,13 +422,13 @@
             <bpws:extensionActivity>
                 <tibex:activityExtension inputVariable="End-input"
                     name="End"
-                    tibex:xpdlId="83838eae-4f2e-4131-997a-afcee40bcaaf" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="87dd450e-194d-4ece-8acb-70f0e3f9a158" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="LogInfoToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;logger:AuditEndResponse/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger1=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;logger1:LogExternalRequestResponse/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -479,7 +449,7 @@
             <bpws:extensionActivity>
                 <tibex:extActivity inputVariable="LogInfo-input"
                     name="LogInfo"
-                    tibex:xpdlId="2de1d16c-e9e0-40c7-8ce6-3981921970b1"
+                    tibex:xpdlId="d77825b7-a4a5-43bf-810d-0fed4df8a679"
                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="StartToLogInfo"/>
@@ -489,7 +459,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; xmlns:logger1=&quot;http://www.example.org/xsd/internal/util/logger/logger/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;LogInfo-input&quot; match=&quot;/&quot;>&lt;logger1:LogInfoRequest>&lt;logger1:LoggerName>&lt;xsl:value-of select=&quot;&amp;quot;AUDIT-END&amp;quot;&quot;/>&lt;/logger1:LoggerName>&lt;xsl:if test=&quot;exists($Start/logger:Payload/*)&quot;>&lt;logger1:Payload>&lt;xsl:copy-of select=&quot;$Start/logger:Payload/*&quot;/>&lt;/logger1:Payload>&lt;/xsl:if>&lt;/logger1:LogInfoRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/internal/util/logger/logger/v1&quot; xmlns:logger1=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;LogInfo-input&quot; match=&quot;/&quot;>&lt;logger:LogInfoRequest>&lt;logger:LoggerName>&lt;xsl:value-of select=&quot;&amp;quot;LOG-REQUEST&amp;quot;&quot;/>&lt;/logger:LoggerName>&lt;xsl:if test=&quot;exists($Start/logger1:Payload/*)&quot;>&lt;logger:Payload>&lt;xsl:copy-of select=&quot;$Start/logger1:Payload/*&quot;/>&lt;/logger:Payload>&lt;/xsl:if>&lt;/logger:LogInfoRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="UTIL.LOGGER.SUB.LOG.LogInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>

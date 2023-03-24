@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/interface/util/logger/logger/v1" xmlns:logger="http://www.example.org/xsd/interface/util/logger/logger/v1" elementFormDefault="qualified">
 
+	<element name="InitialiseRequest" type="logger:InitialiseRequestType"/>
+	<complexType name="InitialiseRequestType" >
+		<sequence>
+			<element ref="logger:Header" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="InitialiseResponse" type="logger:InitialiseResponseType"/>
+	<complexType name="InitialiseResponseType" >
+		<sequence>
+		</sequence>
+	</complexType>
 
 	<element name="AuditStartRequest" type="logger:AuditStartRequestType"/>
 	<complexType name="AuditStartRequestType" >
 		<sequence>
+			<element ref="logger:Header" minOccurs="0"/>
+			<element ref="logger:Payload" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	
@@ -14,23 +28,81 @@
 		</sequence>
 	</complexType>
 	
-	<element name="AuditEnd" type="logger:AuditEndType"/>
-	<complexType name="AuditEndType" >
+	<element name="AuditEndRequest" type="logger:AuditEndRequestType"/>
+	<complexType name="AuditEndRequestType" >
+		<sequence>
+		<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="AuditEndResponse" type="logger:AuditEndResponseType"/>
+	<complexType name="AuditEndResponseType" >
 		<sequence>
 		</sequence>
 	</complexType>
 	
-	<element name="TraceStart" type="logger:TraceStartType"/>
-	<complexType name="TraceStartType" >
+	<element name="TraceStartRequest" type="logger:TraceStartRequestType"/>
+	<complexType name="TraceStartRequestType" >
 		<sequence>
 			<element ref="logger:Payload" minOccurs="0"/>
 		</sequence>
 	</complexType>
 	
-	<element name="TraceEnd" type="logger:TraceEndType"/>
-	<complexType name="TraceEndType" >
+	<element name="TraceStartResponse" type="logger:TraceStartResponseType"/>
+	<complexType name="TraceStartResponseType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="TraceEndRequest" type="logger:TraceEndRequestType"/>
+	<complexType name="TraceEndRequestType" >
 		<sequence>
 			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="TraceEndResponse" type="logger:TraceEndResponseType"/>
+	<complexType name="TraceEndResponseType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="LogRequest" type="logger:LogRequestType"/>
+	<complexType name="LogRequestType" >
+		<sequence>
+			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="LogResponse" type="logger:LogResponseType"/>
+	<complexType name="LogResponseType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="LogExternalRequestRequest" type="logger:LogExternalRequestRequestType"/>
+	<complexType name="LogExternalRequestRequestType" >
+		<sequence>
+			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="LogExternalRequestResponse" type="logger:LogExternalRequestResponseType"/>
+	<complexType name="LogExternalRequestResponseType" >
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="LogExternalResponseRequest" type="logger:LogExternalResponseRequestType"/>
+	<complexType name="LogExternalResponseRequestType" >
+		<sequence>
+			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="LogExternalResponseResponse" type="logger:LogExternalResponseResponseType"/>
+	<complexType name="LogExternalResponseResponseType" >
+		<sequence>
 		</sequence>
 	</complexType>
 	
@@ -41,5 +113,25 @@
 		</sequence>
 	</complexType>
 	
-
+	<element name="Header" type="logger:HeaderType"/>
+	<complexType name="HeaderType">
+		<sequence>
+			<any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<element name="LoggerInfo" type="logger:LoggerInfo"/>
+	<complexType name="LoggerInfo">
+		<sequence>
+			<element ref="logger:LoggerId"/>
+			<element ref="logger:LoggerTree" minOccurs="0"/>
+			<element ref="logger:LoggerSequence"/>
+			<element ref="logger:LoggerInitialiseTimestamp"/>
+		</sequence>
+	</complexType>
+	
+	<element name="LoggerId" type="string"/>
+	<element name="LoggerTree" type="string"/>
+	<element name="LoggerSequence" type="long"/>
+	<element name="LoggerInitialiseTimestamp" type="long"/>
 </schema>

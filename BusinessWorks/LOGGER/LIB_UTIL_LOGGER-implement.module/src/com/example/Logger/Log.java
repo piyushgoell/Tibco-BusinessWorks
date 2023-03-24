@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class Log {
 	private static final ConcurrentHashMap<String, Logger> LOGGER = new ConcurrentHashMap<>();
-	private static final ConcurrentHashMap<String, ConcurrentHashMap<String, Long>> PROCESS_INFO = new ConcurrentHashMap<>();
+	private static final ConcurrentHashMap<String, ConcurrentHashMap<String, Long>> LOGGER_INFO = new ConcurrentHashMap<>();
 	
 	private static final Level LOG_OFF = Level.FINE;
 	private static final Level LOG_ON = Level.FINER;
@@ -35,8 +35,8 @@ public class Log {
 		LOGGER.put(name, logger);
 	}
 	
-	public static int isLoggingEnabled(String name){
-		Level level = LOGGER.get(name).getLevel();
+	public static int isLoggingEnabled(String LoggerName){
+		Level level = LOGGER.get(LoggerName).getLevel();
 		if(level.equals(LOG_PAYLOAD))
 			return STATUS_PAYLOAD;
 		else if(level.equals(LOG_ON))
@@ -58,20 +58,19 @@ public class Log {
 	
 	public static long CaptureEnd(String LoggerId, String context)
 	{
-		ConcurrentHashMap<String, Long> process = PROCESS_INFO.getOrDefault(LoggerId, new ConcurrentHashMap<String, Long>());
+		ConcurrentHashMap<String, Long> process = LOGGER_INFO.getOrDefault(LoggerId, new ConcurrentHashMap<String, Long>());
 		Long startTime = process.get(context);
-		
-		return startTime == null ? -1 : System.currentTimeMillis() - startTime;
+		return startTime == null ? -1 : System.currentTimeMillis() - startTime.longValue();
 	}
 	
 	
 	public static long CaptureStart(String LoggerId, String Context)
 	{
-		ConcurrentHashMap<String, Long> process = PROCESS_INFO.getOrDefault(LoggerId, new ConcurrentHashMap<String, Long>());
+		ConcurrentHashMap<String, Long> process = LOGGER_INFO.getOrDefault(LoggerId, new ConcurrentHashMap<String, Long>());
 		Long startTime = System.currentTimeMillis();
-		process.put(LoggerId, startTime);
-		PROCESS_INFO.putIfAbsent(LoggerId, process);
-		return startTime;
+		process.put(Context, startTime);
+		LOGGER_INFO.putIfAbsent(LoggerId, process);
+		return startTime.longValue();
 	}
 	
 	public static String ConstructMessageMetadata(
@@ -80,7 +79,7 @@ public class Log {
 			String CorrelationID, 
             String OperationContext,  
             String ApplicationName, 
-            int logSequence, 
+            String logSequence, 
             long elapsedTime, 
             long durationTime) {
         StringBuilder str = new StringBuilder(80);
@@ -90,14 +89,7 @@ public class Log {
             str.append(TransactionID);
             str.append("]]");
         }
-        if (!"".equals(CorrelationID)) {
-            str.append("[#");
-            str.append(CorrelationID);
-            str.append("#]");
-        }
         str.append("<<");
-        if (logSequence < 10)
-            str.append("0");
         str.append(logSequence);
         str.append(">>");
         if (!"".equals(ApplicationName)) {
@@ -116,13 +108,9 @@ public class Log {
             str.append("}}");
         }
         if (durationTime >= 0) {
-
-            str.append("{{=");
-
+            str.append("{{-");
             str.append(durationTime);
-
             str.append("}}");
-
         }
 
         return str.toString();

@@ -1,15 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/internal/util/logger/logger/v1" xmlns:logger="http://www.example.org/xsd/internal/util/logger/logger/v1" elementFormDefault="qualified">
 	
-	<element name="StartTimsestamp" type="long"/>
-	<element name="TransactionID" type="string"/>
-	<element name="CorrelationID" type="string"/>
-	<element name="LogSequence" type="long"/>
-	
-	<complexType name="LogInfo">
+	<element name="Payload" type="logger:PayloadType"/>
+	<complexType name="PayloadType">
 		<sequence>
-			<element ref="logger:StartTimsestamp"/>
-			<element ref="logger:LogSequence"/>
+			<any processContents="skip"/>
+		</sequence>
+	</complexType>
+	
+	<element name="LoggerName" type="string"/>
+	<element name="LoggerId" type="string"/>
+	<element name="LoggerSequence" type="string"/>
+	<element name="ProcessContext" type="string"/>
+	<element name="ApplicationName" type="string"/>
+	<element name="ApplicationHostname" type="string"/>
+	<element name="ElapsedTime" type="long"/>
+	<element name="DurationTime" type="long"/>
+	
+	
+	<element name="LogInfoRequest" type="logger:LogInfoRequestType"/>
+	<complexType name="LogInfoRequestType">
+		<sequence>
+			<element ref="logger:LoggerName"/>
+			<element ref="logger:Payload" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ConstructMessageMetadata" type="logger:ConstructMessageMetadataType"/>
+	<complexType name="ConstructMessageMetadataType">
+		<sequence>
+			<element ref="logger:Metadata"/>
+		</sequence>
+	</complexType>
+	
+	<element name="Metadata" type="logger:MetadataType"/>
+	<complexType name="MetadataType">
+	<sequence>
+			<element ref="logger:LoggerName"/>
+			<element ref="logger:LoggerId"/>
+			<element ref="logger:LoggerSequence"/>
+			<element ref="logger:ProcessContext"/>
+			<element ref="logger:ApplicationName"/>
+			<element ref="logger:ApplicationHostname"/>
+			<element ref="logger:ElapsedTime"/>
+			<element ref="logger:DurationTime"/>
 		</sequence>
 	</complexType>
 </schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsdl1="http://www.example.org/wsdl/resource/util/logger/moduleactivator/v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ModuleActivator-v1"
+	targetNamespace="http://www.example.org/wsdl/resource/util/logger/moduleactivator/v1">
+
+	<wsdl:message name="onStartupRequest" />
+	<wsdl:message name="onStartupResponse" />
+	<wsdl:message name="onShutdownRequest" />
+	<wsdl:message name="onShutdownResponse" />
+
+	<wsdl:portType name="ModuleActivator">
+		<wsdl:operation name="onStartup">
+			<wsdl:input message="wsdl1:onStartupRequest" />
+			<wsdl:output message="wsdl1:onStartupResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="onShutdown">
+			<wsdl:input message="wsdl1:onShutdownRequest" />
+			<wsdl:output message="wsdl1:onShutdownResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>

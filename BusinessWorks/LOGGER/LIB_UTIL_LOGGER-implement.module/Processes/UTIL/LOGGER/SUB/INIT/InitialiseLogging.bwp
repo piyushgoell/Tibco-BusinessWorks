@@ -1759,9 +1759,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexOriginalName="index"
-                tibex:indexToGlobal="false" tibex:xpdlId="4e8477ea-11e7-43ad-adf3-6ed164ec6666">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="4e8477ea-11e7-43ad-adf3-6ed164ec6666">
                 <bpws:targets>
                     <bpws:target linkName="ResetLoggingToIterate"/>
                 </bpws:targets>

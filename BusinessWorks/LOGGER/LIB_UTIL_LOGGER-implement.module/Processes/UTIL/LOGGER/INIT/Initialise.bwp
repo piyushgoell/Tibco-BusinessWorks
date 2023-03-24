@@ -5,6 +5,7 @@
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
+    xmlns:ns0="http://www.example.org/xsd/interface/util/logger/logger/v1"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions"
@@ -177,7 +178,8 @@
         extraErrorVars="true" modifiers="public"
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
-    <tibex:ProcessInterface context="" input="" output=""/>
+    <tibex:ProcessInterface context=""
+        input="{http://www.example.org/xsd/interface/util/logger/logger/v1}InitialiseRequest" output="{http://www.example.org/xsd/interface/util/logger/logger/v1}InitialiseResponse"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -406,42 +408,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.5"/>
-                                    <layoutConstraint x="333"
-                                    xsi:type="notation:Bounds" y="88"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint x="446"
+                                    <layoutConstraint x="409"
                                     xsi:type="notation:Bounds" y="88"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -547,27 +514,25 @@
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
             <bendpoints points="[25, -6, -103, 26]$[104, -26, -24, 6]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
+    <tibex:NamespaceRegistry enabled="true">
+        <tibex:namespaceItem
+            namespace="http://www.example.org/xsd/interface/util/logger/logger/v1" prefix="logger"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
+        <tibex:namespaceItem
+            namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+    </tibex:NamespaceRegistry>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/logger/logger/v1"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -577,12 +542,13 @@
             sca-bpel:internal="true" type="xsd:boolean"/>
         <bpws:variable name="SetIsJobInitialised"
             sca-bpel:internal="true" type="xsd:boolean"/>
-        <bpws:variable name="SetJobStartTimestamp-input"
-            sca-bpel:internal="true" type="xsd:integer"/>
-        <bpws:variable name="SetJobStartTimestamp"
-            sca-bpel:internal="true" type="xsd:integer"/>
-        <bpws:variable name="SetLoggerId-input" sca-bpel:internal="true" type="xsd:string"/>
-        <bpws:variable name="SetLoggerId" sca-bpel:internal="true" type="xsd:string"/>
+        <bpws:variable element="ns0:LoggerInfo"
+            name="SetLoggerInfo-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:LoggerInfo" name="SetLoggerInfo" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:InitialiseRequest" name="Start"
+            sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable element="ns0:InitialiseResponse" name="End-input"
+            sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -603,15 +569,14 @@
                     name="GetIsJobInitialisedToInitialiseFramework_NotInitialised"
                     tibex:label="Not Initialised" tibex:linkType="SUCCESSWITHCONDITION"/>
                 <bpws:link name="SetIsJobInitialisedToEnd" tibex:linkType="SUCCESS"/>
-                <bpws:link name="InitialiseFrameworkToSetSharedVariable" tibex:linkType="SUCCESS"/>
-                <bpws:link
-                    name="SetJobStartTimestampToSetSharedVariable" tibex:linkType="SUCCESS"/>
+                <bpws:link name="InitialiseFrameworkToSetLoggerInfo" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SetLoggerIdToSetIsJobInitialised" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="a59eb1e3-b135-4342-8762-4e9ebb0e733f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="a59eb1e3-b135-4342-8762-4e9ebb0e733f"
+                    variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToGetSharedVariable"/>
                     </bpws:sources>
@@ -621,12 +586,17 @@
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension name="End"
+                <tibex:activityExtension inputVariable="End-input"
+                    name="End"
                     tibex:xpdlId="866970d8-9e00-49e1-afcd-7ea88042133f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="GetIsJobInitialisedToEnd_AlreadyInitialised"/>
                         <bpws:target linkName="SetIsJobInitialisedToEnd"/>
                     </bpws:targets>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;> &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;> &lt;logger:InitialiseResponse/>&lt;/xsl:template> &lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.internal.end"
@@ -679,7 +649,7 @@
                         <bpws:target linkName="GetIsJobInitialisedToInitialiseFramework_NotInitialised"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="InitialiseFrameworkToSetSharedVariable"/>
+                        <bpws:source linkName="InitialiseFrameworkToSetLoggerInfo"/>
                     </bpws:sources>
                     <tibex:CallProcess
                         subProcessName="UTIL.LOGGER.SUB.INIT.InitialiseFramework" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -706,41 +676,22 @@
                 </tibex:extActivity>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:extActivity
-                    inputVariable="SetJobStartTimestamp-input"
-                    name="SetJobStartTimestamp"
-                    outputVariable="SetJobStartTimestamp"
-                    tibex:xpdlId="17bd23a0-486d-4e90-a608-6b4f3e7de7b9"
-                    type="bw.internal.setSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="InitialiseFrameworkToSetSharedVariable"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="SetJobStartTimestampToSetSharedVariable"/>
-                    </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding expression="tib:timestamp()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                    </tibex:inputBindings>
-                    <tibex:SetSharedVariable inline="true"
-                        variableName="jobStartTimestamp" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                </tibex:extActivity>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity inputVariable="SetLoggerId-input"
-                    name="SetLoggerId" outputVariable="SetLoggerId"
+                <tibex:extActivity inputVariable="SetLoggerInfo-input"
+                    name="SetLoggerInfo" outputVariable="SetLoggerInfo"
                     tibex:xpdlId="805cb3c7-8325-438d-be95-7af11f7b931f"
                     type="bw.internal.setSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="SetJobStartTimestampToSetSharedVariable"/>
+                        <bpws:target linkName="InitialiseFrameworkToSetLoggerInfo"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="SetLoggerIdToSetIsJobInitialised"/>
                     </bpws:sources>
                     <tibex:inputBindings>
-                        <tibex:inputBinding expression="tib:uuid()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;!--START COERCIONS-->&#xa;&lt;!-- $Start/logger:Header/*, element, logger:LoggerInfo -->&#xa;&lt;!--END COERCIONS-->&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;SetLoggerInfo-input&quot; match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/logger:Header/logger:LoggerInfo)&quot;>&lt;logger:LoggerInfo>&lt;logger:LoggerId>&lt;xsl:value-of select=&quot;$Start/logger:Header/logger:LoggerInfo[1]/logger:LoggerId&quot;/>&lt;/logger:LoggerId>&lt;logger:LoggerTree>&lt;xsl:value-of select=&quot;concat($Start/logger:Header/logger:LoggerInfo[1]/logger:LoggerTree,format-number($Start/logger:Header/logger:LoggerInfo[1]/logger:LoggerSequence, &amp;quot;00&amp;quot;))&quot;/>&lt;/logger:LoggerTree>&lt;logger:LoggerSequence>&lt;xsl:value-of select=&quot;0&quot;/>&lt;/logger:LoggerSequence>&lt;logger:LoggerInitialiseTimestamp>&lt;xsl:value-of select=&quot;$Start/logger:Header/logger:LoggerInfo[1]/logger:LoggerInitialiseTimestamp&quot;/>&lt;/logger:LoggerInitialiseTimestamp>&lt;/logger:LoggerInfo>&lt;/xsl:when>&lt;xsl:otherwise>&lt;logger:LoggerInfo>&lt;logger:LoggerId>&lt;xsl:value-of select=&quot;tib:uuid()&quot;/>&lt;/logger:LoggerId>&lt;logger:LoggerSequence>&lt;xsl:value-of select=&quot;0&quot;/>&lt;/logger:LoggerSequence>&lt;logger:LoggerInitialiseTimestamp>&lt;xsl:value-of select=&quot;tib:timestamp()&quot;/>&lt;/logger:LoggerInitialiseTimestamp>&lt;/logger:LoggerInfo>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:SetSharedVariable inline="true"
-                        variableName="LoggerId" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                        variableName="LoggerInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>

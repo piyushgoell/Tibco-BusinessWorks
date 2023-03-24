@@ -2,8 +2,7 @@
 <jsv:DocumentRoot xmlns:jsv="http://tns.tibco.com/bw/model/core/jobSV">
   <jobSharedVariables>
     <jobSharedVariable name="IsJobInitialised" type="{http://www.w3.org/2001/XMLSchema}boolean" initialValueMode="literal" initialValue="false"/>
-    <jobSharedVariable name="logSequence" type="{http://www.w3.org/2001/XMLSchema}integer" initialValueMode="literal" initialValue="0"/>
-    <jobSharedVariable name="jobStartTimestamp" type="{http://www.w3.org/2001/XMLSchema}integer" initialValueMode="literal" initialValue="0"/>
-    <jobSharedVariable name="LoggerId" type="{http://www.w3.org/2001/XMLSchema}string" initialValueMode="none"/>
+    <jobSharedVariable name="LoggerInfo" type="{http://www.example.org/xsd/interface/util/logger/logger/v1}LoggerInfo" initialValueMode="none"/>
   </jobSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/logger/logger/v1" location="../Schemas/Interface/UTIL/LOGGER/Logger-v1.xsd"/>
 </jsv:DocumentRoot>
