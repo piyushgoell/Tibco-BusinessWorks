@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="IsFrameworkInitialised" type="{http://www.w3.org/2001/XMLSchema}boolean" initialValueMode="literal" initialValue="false"/>
+    <moduleSharedVariable name="HousekeepingNextDueDate" type="{http://www.w3.org/2001/XMLSchema}integer" initialValueMode="literal" initialValue="0"/>
+  </moduleSharedVariables>
+</msv:DocumentRoot>

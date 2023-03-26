@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: LIB_UTIL_SECURITY-implement Module
+Bundle-SymbolicName: LIB_UTIL_SECURITY-implement.module
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: lib/jjwt-api-0.11.5.jar,.annoxfiles/,.
+Bundle-Vendor: TIBCO Software Inc.
+Export-Package: UTIL.SECURITY
+Require-Bundle: LIB_UTIL_LOGGER-implement.module;bundle-version="1.0.0"
+Provide-Capability: com.tibco.bw.module; name="LIB_UTIL_SECURITY-implement.module"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://tns.tibco.com/bw/REST",
+ com.tibco.bw.schemas; ns="http://www.example.org/xsd/interface/util/security/jwt/v1",
+ com.tibco.bw.schemas; ns="http://www.example.org/xsd/interface/util/security/security/v1",
+ com.tibco.bw.schemas; ns="http://www.example.org/xsd/interface/util/security/transaction/v1",
+ com.tibco.bw.schemas; ns="http://www.example.org/xsd/internal/util/security/transaction/v1",
+ com.tibco.bw.schemas; ns="www.tibco.com/plugin/java/xmlSchema/UTIL.SECURITY.Security",
+ com.tibco.bw.processes; name="UTIL.SECURITY.INIT",
+ com.tibco.bw.processes; name="UTIL.SECURITY.SUB.INIT",
+ com.tibco.bw.processes; name="UTIL.SECURITY.JWT",
+ com.tibco.bw.processes; name="UTIL.SECURITY.SUB.JWT",
+ com.tibco.bw.resources; name="UTIL.SECURITY",
+ com.tibco.bw.processes; name="UTIL.SECURITY.TRANSACTION",
+ com.tibco.bw.processes; name="UTIL.SECURITY.SUB.TRANSACTION"
+TIBCO-BW-Version: 6.6.0 V41 2019-11-07
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-Edition: bwe
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=LIB_UTIL_LOGGER-implement.module)(version=1.0.0))",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.java)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.java)"

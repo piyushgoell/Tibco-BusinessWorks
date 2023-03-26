@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsv:DocumentRoot xmlns:jsv="http://tns.tibco.com/bw/model/core/jobSV">
+  <jobSharedVariables>
+    <jobSharedVariable name="TransactionDetail" type="{http://www.example.org/xsd/internal/util/security/transaction/v1}TransactionDetail" initialValueMode="none"/>
+    <jobSharedVariable name="IsSecurityInitialised" type="{http://www.w3.org/2001/XMLSchema}boolean" initialValueMode="literal" initialValue="false"/>
+  </jobSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/internal/util/security/transaction/v1" location="../Schemas/Internal/UTIL/SECURITY/Transaction-v1.xsd"/>
+</jsv:DocumentRoot>
