@@ -34,7 +34,6 @@
 		<sequence>
 			<choice>
 				<element ref="ftl1:FTLRequestReplyRequest" minOccurs="0"/>
-				<element ref="ftl1:FTLPublishRequest" minOccurs="0"/>
 			</choice>
 		</sequence>
 	</complexType>
@@ -44,7 +43,6 @@
 		<sequence>
 			<choice>
 				<element ref="ftl1:FTLRequestReplyResponse" minOccurs="0"/>
-				<element ref="ftl1:FTLPublishResponse" minOccurs="0"/>
 			</choice>
 		</sequence>
 	</complexType>
