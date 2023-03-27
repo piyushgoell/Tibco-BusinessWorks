@@ -20,7 +20,7 @@
 		</sequence>
 	</complexType>
 
-	<element name="Payload" type="soap:Body" />
+	<element name="Payload" type="ftl:PayloadType" />
 	<complexType name="PayloadType">
 		<sequence>
 			<any processContents="skip" />
