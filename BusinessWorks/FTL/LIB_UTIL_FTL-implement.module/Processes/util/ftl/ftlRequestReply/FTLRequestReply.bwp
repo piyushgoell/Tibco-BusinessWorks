@@ -833,13 +833,13 @@
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
         <bpws:variable element="ns9:DefaultFault" name="Throw-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:CipherFTLRequestReplyRequest"
+        <bpws:variable element="ns5:CipherFTLMessageRequest"
             name="CipherFTLMessage-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:CipherFTLRequestReplyResponse"
+        <bpws:variable element="ns5:CipherFTLMessageResponse"
             name="CipherFTLMessage" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:DecipherFTLRequestReplyRequest"
+        <bpws:variable element="ns5:DecipherFTLMessageRequest"
             name="DecipherFTLMessage-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:DecipherFTLRequestReplyResponse"
+        <bpws:variable element="ns5:DecipherFTLMessageResponse"
             name="DecipherFTLMessage" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
@@ -967,7 +967,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;CipherFTLMessage-input&quot; match=&quot;/&quot;>&lt;ftl:CipherFTLRequestReplyRequest>&lt;ftl:Channel>&lt;xsl:value-of select=&quot;$Start/ftl:FTLRequest/ftl:Channel&quot;/>&lt;/ftl:Channel>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest/ftl:Payload&quot;/>&lt;/ftl:CipherFTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;CipherFTLMessage-input&quot; match=&quot;/&quot;>&lt;ftl:CipherFTLMessageRequest>&lt;ftl:Channel>&lt;xsl:value-of select=&quot;$Start/ftl:FTLRequest/ftl:Channel&quot;/>&lt;/ftl:Channel>&lt;xsl:copy-of select=&quot;$Start/ftl:FTLRequest/ftl:Payload&quot;/>&lt;/ftl:CipherFTLMessageRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="UTIL.FTL.FTLMessage.CipherFTLMessage" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -988,7 +988,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FTLRequestReply&quot;/>&lt;xsl:template name=&quot;DecipherFTLMessage-input&quot; match=&quot;/&quot;>&lt;ftl:DecipherFTLRequestReplyRequest>&lt;ftl:FTLMessage>&lt;xsl:copy-of select=&quot;$FTLRequestReply/Message/ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;$FTLRequestReply/Message/@*&quot;/>&lt;xsl:copy-of select=&quot;$FTLRequestReply/Message/node()&quot;/>&lt;/ftl:FTLMessage>&lt;/ftl:DecipherFTLRequestReplyRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;FTLRequestReply&quot;/>&lt;xsl:template name=&quot;DecipherFTLMessage-input&quot; match=&quot;/&quot;>&lt;ftl:DecipherFTLMessageRequest>&lt;ftl:FTLMessage>&lt;xsl:copy-of select=&quot;$FTLRequestReply/Message/ancestor-or-self::*/namespace::node()&quot;/>&lt;xsl:copy-of select=&quot;$FTLRequestReply/Message/@*&quot;/>&lt;xsl:copy-of select=&quot;$FTLRequestReply/Message/node()&quot;/>&lt;/ftl:FTLMessage>&lt;/ftl:DecipherFTLMessageRequest>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="UTIL.FTL.FTLMessage.DecipherFTLMessage" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>

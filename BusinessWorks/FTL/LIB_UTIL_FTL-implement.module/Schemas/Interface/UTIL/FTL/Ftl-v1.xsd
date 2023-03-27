@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ftl="http://www.example.org/xsd/interface/util/ftl/v1"
-	elementFormDefault="qualified" targetNamespace="http://www.example.org/xsd/interface/util/ftl/v1">
+	elementFormDefault="qualified" targetNamespace="http://www.example.org/xsd/interface/util/ftl/v1"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+	<import schemaLocation="../../../Standard/SoapEnvelope/SoapEnvelope-v1.xsd"
+		namespace="http://schemas.xmlsoap.org/soap/envelope/" />
 
 	<element name="Endpoint" type="string" />
 	<element name="Channel" type="string" />
@@ -16,19 +20,11 @@
 		</sequence>
 	</complexType>
 
-	<element name="Payload" type="ftl:PayloadType" />
+	<element name="Payload" type="soap:Body" />
 	<complexType name="PayloadType">
 		<sequence>
 			<any processContents="skip" />
 		</sequence>
-	</complexType>
-
-	<element name="Header" type="ftl:HeaderType" />
-	<complexType name="HeaderType">
-		<sequence>
-			<any maxOccurs="unbounded" minOccurs="0" processContents="skip" />
-		</sequence>
-		<anyAttribute namespace="##other" processContents="lax" />
 	</complexType>
 
 	<element name="FTLRequest" type="ftl:FTLRequestType" />
@@ -98,7 +94,7 @@
 	<complexType name="CipherFTLMessageRequestType">
 		<sequence>
 			<element ref="ftl:Channel" />
-			<element minOccurs="0" ref="ftl:Header" />
+			<element ref="soap:Header" minOccurs="0"/>
 			<element ref="ftl:Payload" />
 		</sequence>
 	</complexType>
@@ -117,7 +113,7 @@
 
 	<complexType name="DecipherFTLMessageResponseType">
 		<sequence>
-			<element minOccurs="0" ref="ftl:Header" />
+			<element minOccurs="0" ref="soap:Header" />
 			<element ref="ftl:Payload" />
 		</sequence>
 	</complexType>
@@ -131,10 +127,10 @@
 	<element name="FTLBatchExecutorRequest" type="ftl:FTLBatchExecutorRequestType" />
 	<element name="FTLBatchExecutorResponse" type="ftl:FTLBatchExecutorResponseType" />
 
-	<element name="CipherFTLRequestReplyRequest" type="ftl:CipherFTLMessageRequestType" />
-	<element name="CipherFTLRequestReplyResponse" type="ftl:CipherFTLMessageResponseType" />
+	<element name="CipherFTLMessageRequest" type="ftl:CipherFTLMessageRequestType" />
+	<element name="CipherFTLMessageResponse" type="ftl:CipherFTLMessageResponseType" />
 
-	<element name="DecipherFTLRequestReplyRequest" type="ftl:DecipherFTLMessageRequestType" />
-	<element name="DecipherFTLRequestReplyResponse" type="ftl:DecipherFTLMessageResponseType" />
+	<element name="DecipherFTLMessageRequest" type="ftl:DecipherFTLMessageRequestType" />
+	<element name="DecipherFTLMessageResponse" type="ftl:DecipherFTLMessageResponseType" />
 
 </schema>

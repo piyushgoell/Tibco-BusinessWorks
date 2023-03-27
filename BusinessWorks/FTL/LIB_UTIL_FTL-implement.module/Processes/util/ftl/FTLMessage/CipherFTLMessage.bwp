@@ -2,7 +2,7 @@
 <bpws:process exitOnStandardFault="no"
     name="UTIL.FTL.FTLMessage.CipherFTLMessage"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230318153548"
+    targetNamespace="http://xmlns.example.com/20230327234452"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -183,7 +183,7 @@
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.org/xsd/interface/util/ftl/v1}CipherFTLRequestReplyRequest" output="{http://www.example.org/xsd/interface/util/ftl/v1}CipherFTLRequestReplyResponse"/>
+        input="{http://www.example.org/xsd/interface/util/ftl/v1}CipherFTLMessageRequest" output="{http://www.example.org/xsd/interface/util/ftl/v1}CipherFTLMessageResponse"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -508,9 +508,9 @@
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:CipherFTLRequestReplyRequest"
+        <bpws:variable element="ns1:CipherFTLMessageRequest"
             name="Start" sca-bpel:internal="true" tibex:parameter="in"/>
-        <bpws:variable element="ns1:CipherFTLRequestReplyResponse"
+        <bpws:variable element="ns1:CipherFTLMessageResponse"
             name="End-input" sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns2:Envelope"
             name="CipherFTLMessage-input" sca-bpel:internal="true"/>
@@ -562,7 +562,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;CipherFTLMessage&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;ftl:CipherFTLRequestReplyResponse>&lt;ftl:FTLMessage>&lt;ftl:Channel>&lt;xsl:value-of select=&quot;$Start/ftl:Channel&quot;/>&lt;/ftl:Channel>&lt;ftl:Message>&lt;xsl:value-of select=&quot;xsd:base64Binary(tib:string-to-base64(tib:render-xml($CipherFTLMessage,true(), false())))&quot;/>&lt;/ftl:Message>&lt;/ftl:FTLMessage>&lt;/ftl:CipherFTLRequestReplyResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:ftl=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:tib=&quot;http://www.tibco.com/bw/xslt/custom-functions&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;CipherFTLMessage&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;ftl:CipherFTLMessageResponse>&lt;ftl:FTLMessage>&lt;ftl:Channel>&lt;xsl:value-of select=&quot;$Start/ftl:Channel&quot;/>&lt;/ftl:Channel>&lt;ftl:Message>&lt;xsl:value-of select=&quot;xsd:base64Binary(tib:string-to-base64(tib:render-xml($CipherFTLMessage,true(), false())))&quot;/>&lt;/ftl:Message>&lt;/ftl:FTLMessage>&lt;/ftl:CipherFTLMessageResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

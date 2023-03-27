@@ -2,7 +2,7 @@
 <bpws:process exitOnStandardFault="no"
     name="UTIL.FTL.FTLMessage.DecipherFTLMessage"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230318165848"
+    targetNamespace="http://xmlns.example.com/20230327232514"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
@@ -289,7 +289,7 @@
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{http://www.example.org/xsd/interface/util/ftl/v1}DecipherFTLRequestReplyRequest" output="{http://www.example.org/xsd/interface/util/ftl/v1}DecipherFTLRequestReplyResponse"/>
+        input="{http://www.example.org/xsd/interface/util/ftl/v1}DecipherFTLMessageRequest" output="{http://www.example.org/xsd/interface/util/ftl/v1}DecipherFTLMessageResponse"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -600,10 +600,6 @@
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable element="ns0:DecipherFTLRequestReplyRequest"
-            name="Start" sca-bpel:internal="true" tibex:parameter="in"/>
-        <bpws:variable element="ns0:DecipherFTLRequestReplyResponse"
-            name="End-input" sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns1:xmlBinary"
             name="DecipherFTLMessage-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:Envelope" name="DecipherFTLMessage" sca-bpel:internal="true"/>
@@ -618,6 +614,10 @@
             name="Initialise-Security-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:InitialiseResponse"
             name="Initialise-Security" sca-bpel:internal="true"/>
+        <bpws:variable element="ns0:DecipherFTLMessageRequest"
+            name="Start" sca-bpel:internal="true" tibex:parameter="in"/>
+        <bpws:variable element="ns0:DecipherFTLMessageResponse"
+            name="End-input" sca-bpel:internal="true" tibex:parameter="out"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -657,7 +657,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns2=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:security=&quot;http://www.example.org/xsd/interface/util/security/security/v1&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;DecipherFTLMessage&quot;/>&lt;xsl:param name=&quot;Initialise-Logger&quot;/>&lt;xsl:param name=&quot;Initialise-Security&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns:DecipherFTLRequestReplyResponse>&lt;tns:Header>&lt;xsl:copy-of select=&quot;$Initialise-Security/security:Header/*&quot;/>&lt;xsl:copy-of select=&quot;$Initialise-Logger/logger:Header/*&quot;/>&lt;/tns:Header>&lt;tns:Payload>&lt;xsl:copy-of select=&quot;$DecipherFTLMessage/tns2:Body/*&quot;/>&lt;/tns:Payload>&lt;/tns:DecipherFTLRequestReplyResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.org/xsd/interface/util/ftl/v1&quot; xmlns:logger=&quot;http://www.example.org/xsd/interface/util/logger/logger/v1&quot; xmlns:tns2=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:security=&quot;http://www.example.org/xsd/interface/util/security/security/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;DecipherFTLMessage&quot;/>&lt;xsl:param name=&quot;Initialise-Logger&quot;/>&lt;xsl:param name=&quot;Initialise-Security&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns:DecipherFTLMessageResponse>&lt;tns2:Header>&lt;xsl:copy-of select=&quot;$Initialise-Logger/logger:Header/*&quot;/>&lt;xsl:copy-of select=&quot;$Initialise-Security/security:Header/*&quot;/>&lt;/tns2:Header>&lt;tns:Payload>&lt;xsl:copy-of select=&quot;$DecipherFTLMessage/tns2:Body/*&quot;/>&lt;/tns:Payload>&lt;/tns:DecipherFTLMessageResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
