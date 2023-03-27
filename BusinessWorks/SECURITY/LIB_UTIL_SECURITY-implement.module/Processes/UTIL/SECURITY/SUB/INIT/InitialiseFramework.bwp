@@ -337,7 +337,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="216"
+                                    <layoutConstraint x="227"
                                     xsi:type="notation:Bounds" y="164"/>
                                     </children>
                                     <children type="4002">
@@ -372,7 +372,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
-                                    <layoutConstraint x="358"
+                                    <layoutConstraint x="370"
                                     xsi:type="notation:Bounds" y="164"/>
                                     </children>
                                     <children type="4002">

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpws:process exitOnStandardFault="no"
-    name="UTIL.SECURITY.SUB.INIT.InitialiseSecurity"
+    name="UTIL.SECURITY.TRANSACTION.ObtainTransactionInfo"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230326192117"
+    targetNamespace="http://xmlns.example.com/20230326201720"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
+    xmlns:ns0="http://www.example.org/xsd/internal/util/security/transaction/v1"
+    xmlns:ns1="http://www.example.org/xsd/interface/util/security/transaction/v1"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
-    xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
     xmlns:tibprop="http://ns.tibco.com/bw/property" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <tibex:Types>
@@ -174,7 +175,7 @@
         </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="true" createdBy="piyus"
-        createdOn="Sun Mar 26 19:21:17 IST 2023" description=""
+        createdOn="Sun Mar 26 20:17:20 IST 2023" description=""
         extraErrorVars="true" modifiers="public"
         productVersion="6.6.0 V41 2019-11-07" scalable="true"
         singleton="true" stateless="false" type="IT"/>
@@ -279,46 +280,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.1"/>
-                                    <layoutConstraint x="404"
-                                    xsi:type="notation:Bounds" y="2"/>
-                                    </children>
-                                    <children type="4002">
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <children type="4017">
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-                                    <styles fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
-                                    <layoutConstraint x="264"
+                                    <layoutConstraint x="291"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <children type="4002">
@@ -352,8 +314,8 @@
                                     backgroundColor="16777215"
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-                                    <element href="//0/@process/@activity/@activity/@activities.3"/>
-                                    <layoutConstraint x="127"
+                                    <element href="//0/@process/@activity/@activity/@activities.2"/>
+                                    <layoutConstraint x="125"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -369,7 +331,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
                                     <layoutConstraint height="384"
-                                    width="774" xsi:type="notation:Bounds"/>
+                                    width="515" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -398,13 +360,13 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="460" width="1119" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="460" width="860" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
@@ -414,17 +376,6 @@
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
-            <bendpoints points="[25, 0, -110, -6]$[111, 0, -24, -6]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
@@ -432,17 +383,16 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
-            <bendpoints points="[25, -6, -63, 0]$[64, 0, -24, 6]" xsi:type="notation:RelativeBendpoints"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <bendpoints points="[25, 0, -166, 0]$[167, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/xsd/interface/util/security/transaction/v1"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
-        <bpws:variable name="SetHousekeepingNextDueDate-input"
-            sca-bpel:internal="true" type="xsd:integer"/>
-        <bpws:variable name="SetHousekeepingNextDueDate"
-            sca-bpel:internal="true" type="xsd:integer"/>
+        <bpws:variable element="ns1:TransactionInfo"
+            name="GetTransactionInfo" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -455,19 +405,15 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToDownloadRSAKeys" tibex:linkType="SUCCESS"/>
-                <bpws:link
-                    name="DownloadRSAKeysToSetHousekeepingNextDueDate" tibex:linkType="SUCCESS"/>
-                <bpws:link name="SetHousekeepingNextDueDateToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToGetSharedVariable" tibex:linkType="SUCCESS"/>
+                <bpws:link name="GetSharedVariableToEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="00a4eb47-9923-487b-9af0-d6df6aeba2a6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="c7409f29-2de8-4f58-8a93-dc0a8278438f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToDownloadRSAKeys">
-                            <tibex:DesignExpression/>
-                        </bpws:source>
+                        <bpws:source linkName="StartToGetSharedVariable"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -476,9 +422,9 @@
             </bpws:extensionActivity>
             <bpws:extensionActivity>
                 <tibex:activityExtension name="End"
-                    tibex:xpdlId="96df11fa-9646-4bda-9017-7329ac0e5eea" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="37575f9f-f421-4449-a141-f4986a9a4058" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="SetHousekeepingNextDueDateToEnd"/>
+                        <bpws:target linkName="GetSharedVariableToEnd"/>
                     </bpws:targets>
                     <tibex:config>
                         <bwext:BWActivity
@@ -497,37 +443,18 @@
                 </tibex:activityExtension>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:extActivity
-                    inputVariable="SetHousekeepingNextDueDate-input"
-                    name="SetHousekeepingNextDueDate"
-                    outputVariable="SetHousekeepingNextDueDate"
-                    tibex:xpdlId="3b012725-6661-4966-a27a-18a6d3d76631"
-                    type="bw.internal.setSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                <tibex:extActivity name="GetTransactionInfo"
+                    outputVariable="GetTransactionInfo"
+                    tibex:xpdlId="cd7f99d3-6733-49c5-8626-734982abc6ef"
+                    type="bw.internal.getSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
-                        <bpws:target linkName="DownloadRSAKeysToSetHousekeepingNextDueDate"/>
+                        <bpws:target linkName="StartToGetSharedVariable"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="SetHousekeepingNextDueDateToEnd"/>
+                        <bpws:source linkName="GetSharedVariableToEnd"/>
                     </bpws:sources>
-                    <tibex:inputBindings>
-                        <tibex:inputBinding expression="tib:timestamp()" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                    </tibex:inputBindings>
-                    <tibex:SetSharedVariable
-                        variableName="HousekeepingNextDueDate" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
-                </tibex:extActivity>
-            </bpws:extensionActivity>
-            <bpws:extensionActivity>
-                <tibex:extActivity name="DownloadRSAKeys"
-                    tibex:xpdlId="23cd5d29-2a47-434a-92b8-049a0c7051c9"
-                    type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                    <bpws:targets>
-                        <bpws:target linkName="StartToDownloadRSAKeys"/>
-                    </bpws:targets>
-                    <bpws:sources>
-                        <bpws:source linkName="DownloadRSAKeysToSetHousekeepingNextDueDate"/>
-                    </bpws:sources>
-                    <tibex:CallProcess
-                        subProcessName="UTIL.SECURITY.SUB.JWT.DownloadRSAKeys" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                    <tibex:GetSharedVariable inline="true"
+                        variableName="TransactionInfo" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
         </bpws:flow>

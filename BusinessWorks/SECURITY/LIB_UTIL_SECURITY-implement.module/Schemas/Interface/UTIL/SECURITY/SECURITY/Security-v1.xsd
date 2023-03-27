@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:jwt="http://www.example.org/xsd/interface/util/security/jwt/v1"
+	xmlns:security="http://www.example.org/xsd/interface/util/security/security/v1"
+	xmlns:transaction="http://www.example.org/xsd/interface/util/security/transaction/v1"
+	elementFormDefault="qualified"
+	targetNamespace="http://www.example.org/xsd/interface/util/security/security/v1">
+
+
+	<import
+		namespace="http://www.example.org/xsd/interface/util/security/transaction/v1"
+		schemaLocation="../Transaction/Transaction-v1.xsd" />
+	<import namespace="http://www.example.org/xsd/interface/util/security/jwt/v1"
+		schemaLocation="../JWT/Jwt-v1.xsd" />
+
+	<element name="InitialiseRequest" type="security:InitialiseRequestType" />
+	<complexType name="InitialiseRequestType">
+		<sequence>
+			<element ref="security:Header" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="InitialiseResponse" type="security:InitialiseResponseType" />
+	<complexType name="InitialiseResponseType">
+		<sequence>
+			<element ref="security:Header" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="InitialiseTransactionRequest" type="security:InitialiseTransactionRequestType" />
+	<complexType name="InitialiseTransactionRequestType">
+		<sequence>
+			<element ref="security:Header" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="InitialiseTransactionResponse" type="security:InitialiseTransactionResponseType" />
+	<complexType name="InitialiseTransactionResponseType">
+		<sequence>
+			<element ref="transaction:TransactionInfo" />
+		</sequence>
+	</complexType>
+
+	<element name="InitiateTransactionRequest" type="security:InitiateTransactionRequestType" />
+	<complexType name="InitiateTransactionRequestType">
+		<sequence>
+			<element ref="security:Header" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<element name="InitiateTransactionResponse" type="security:InitiateTransactionResponseType" />
+	<complexType name="InitiateTransactionResponseType">
+		<sequence>
+			<element ref="transaction:TransactionInfo" />
+		</sequence>
+	</complexType>
+
+	<element name="ProcessJwtRequest" type="security:ProcessJwtRequestType" />
+
+	<complexType name="ProcessJwtRequestType">
+		<sequence>
+			<element ref="jwt:JwtToken" />
+			<element minOccurs="0" ref="jwt:AllowExpiredToken" />
+		</sequence>
+	</complexType>
+
+	<element name="ProcessJwtResponse" type="security:ProcessJwtResponseType" />
+	<complexType name="ProcessJwtResponseType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="1" ref="jwt:Claims" />
+		</sequence>
+	</complexType>
+
+	<element name="Header" type="security:HeaderType" />
+	<complexType name="HeaderType">
+		<sequence>
+			<any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</schema>

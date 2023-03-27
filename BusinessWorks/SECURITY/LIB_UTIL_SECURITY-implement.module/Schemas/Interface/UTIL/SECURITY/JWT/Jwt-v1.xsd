@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/xsd/interface/util/security/jwt/v1"
+	xmlns:jwt="http://www.example.org/xsd/interface/util/security/jwt/v1"
+	elementFormDefault="qualified">
+
+	<element name="Claims" type="jwt:ClaimsType" />
+	<complexType name="ClaimsType">
+		<sequence>
+			<element ref="jwt:Name" />
+			<element ref="jwt:Value" />
+		</sequence>
+	</complexType>
+
+	<element name="Name" type="string" />
+	<element name="Value" type="string" />
+
+
+	<element name="AllowExpiredToken" type="boolean" />
+	<element name="JwtToken" type="string" />
+
+</schema>
