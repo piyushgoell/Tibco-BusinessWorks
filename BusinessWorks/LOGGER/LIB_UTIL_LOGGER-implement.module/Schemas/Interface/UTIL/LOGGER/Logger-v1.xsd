@@ -11,6 +11,7 @@
 	<element name="InitialiseResponse" type="logger:InitialiseResponseType"/>
 	<complexType name="InitialiseResponseType" >
 		<sequence>
+			<element ref="logger:Header" minOccurs="0"/>
 		</sequence>
 	</complexType>
 
