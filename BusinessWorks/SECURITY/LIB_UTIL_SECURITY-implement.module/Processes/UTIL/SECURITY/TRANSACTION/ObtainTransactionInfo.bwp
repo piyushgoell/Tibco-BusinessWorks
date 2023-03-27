@@ -2,7 +2,7 @@
 <bpws:process exitOnStandardFault="no"
     name="UTIL.SECURITY.TRANSACTION.ObtainTransactionInfo"
     suppressJoinFailure="yes"
-    targetNamespace="http://xmlns.example.com/20230326201720"
+    targetNamespace="http://xmlns.example.com/20230327232535"
     xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
     xmlns:info="http://www.tibco.com/bw/process/info"
     xmlns:ns="http://www.tibco.com/pe/EngineTypes"
