@@ -21,7 +21,8 @@ Provide-Capability: com.tibco.bw.module; name="LIB_UTIL_SECURITY-implement.modul
  com.tibco.bw.processes; name="UTIL.SECURITY.JWT",
  com.tibco.bw.processes; name="UTIL.SECURITY.SUB.JWT",
  com.tibco.bw.resources; name="UTIL.SECURITY",
- com.tibco.bw.processes; name="UTIL.SECURITY.TRANSACTION"
+ com.tibco.bw.processes; name="UTIL.SECURITY.TRANSACTION",
+ com.tibco.bw.processes; name="UTIL.SECURITY.EXCEPTION"
 TIBCO-BW-Edition: bwe
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 TIBCO-BW-ConfigProfile: META-INF/default.substvar
