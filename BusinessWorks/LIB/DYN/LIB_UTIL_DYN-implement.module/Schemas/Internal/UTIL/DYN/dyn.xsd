@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/internal/util/dyn/v1"
+	xmlns:dyn="http://www.example.org/xsd/internal/util/dyn/v1"
+	elementFormDefault="qualified" xmlns:rest="http://tns.tibco.com/bw/REST">
+
+    <import namespace="http://tns.tibco.com/bw/REST" schemaLocation="../../../RESTSchema.xsd"/>
+    <element name="FetchXmlRequest" type="dyn:CreateFetchXmlRequestType" />
+	<complexType name="CreateFetchXmlRequestType">
+		<sequence>
+			<element ref="dyn:entity" />
+			<element ref="dyn:fetchXml" />
+			<element ref="rest:httpHeaders"/>
+		</sequence>
+	</complexType>
+	
+	<element name="PostRequest" type="dyn:PostRequestType" />
+	<complexType name="PostRequestType">
+		<sequence>
+			<element ref="dyn:entity" />
+			<element ref="dyn:selectQuery" minOccurs="0"/>
+			<element ref="dyn:expandQuery" minOccurs="0"/>
+			<element ref="dyn:postData"/>
+			<element ref="rest:httpHeaders"/>
+		</sequence>
+	</complexType>
+	
+	<element name="GetRequest" type="dyn:GetRequestType" />
+	<complexType name="GetRequestType">
+		<sequence>
+			<element ref="dyn:entity" />
+			<element ref="dyn:entityQuery" minOccurs="0"/>
+			<element ref="dyn:selectQuery" minOccurs="0"/>
+			<element ref="dyn:expandQuery" minOccurs="0"/>
+			<element ref="dyn:filterQuery" minOccurs="0"/>
+			<element ref="dyn:orderbyQuery" minOccurs="0"/>
+			<element ref="dyn:applyQuery" minOccurs="0"/>
+			<element ref="dyn:topQuery" minOccurs="0"/>
+			<element ref="dyn:countQuery" minOccurs="0"/>
+			<element ref="rest:httpHeaders"/>
+		</sequence>
+	</complexType>
+	
+	<element name="UpdateRequest" type="dyn:UpdateRequestType" />
+	<complexType name="UpdateRequestType">
+		<sequence>
+			<element ref="dyn:entity" />
+			<element ref="dyn:entityQuery" minOccurs="0"/>
+			<element ref="dyn:selectQuery" minOccurs="0"/>
+			<element ref="dyn:expandQuery" minOccurs="0"/>
+			<element ref="dyn:putData"/>
+			<element ref="rest:httpHeaders"/>
+		</sequence>
+	</complexType>
+
+
+	<element name="GetOrGenerateDYNAuthorizationTokenRequest"
+		type="dyn:GetOrGenerateDYNAuthorizationTokenRequestType" />
+	<complexType name="GetOrGenerateDYNAuthorizationTokenRequestType">
+		<sequence>
+		</sequence>
+	</complexType>
+
+	<element name="GetOrGenerateDYNAuthorizationTokenResponse"
+		type="dyn:GetOrGenerateDYNAuthorizationTokenResponseType" />
+	<complexType name="GetOrGenerateDYNAuthorizationTokenResponseType">
+		<sequence>
+			<element ref="dyn:accessToken"/>
+		</sequence>
+	</complexType>
+
+	<element name="FetchXmlResponse" type="dyn:FetchXmlResponseType" />
+
+	<complexType name="FetchXmlResponseType">
+		<sequence>
+			<choice>
+				<element ref="dyn:responseJsonString" />
+				<sequence>
+
+					<element name="odata.context" minOccurs="0" type="string" />
+					<element name="odata.count" minOccurs="0" type="string" />
+					<element name="Microsoft.Dynamics.CRM.fetchxmlpagingcookie"
+						minOccurs="0" type="string" />
+					<element name="value" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<sequence>
+								<any processContents="skip" minOccurs="0" maxOccurs="unbounded" />
+							</sequence>
+						</complexType>
+					</element>
+
+				</sequence>
+
+			</choice>
+		</sequence>
+	</complexType>
+
+
+
+	<element name="entity" type="string" />
+	<element name="entityQuery" type="string" />
+	<element name="fetchXml" type="string" />
+	<element name="responseJsonString" type="string" />
+	<element name="accessToken" type="string" />
+	<element name="selectQuery" type="string" />
+	<element name="expandQuery" type="string" />
+	<element name="filterQuery" type="string" />
+	<element name="orderbyQuery" type="string" />
+	<element name="applyQuery" type="string" />
+	<element name="topQuery" type="string" />
+	<element name="countQuery" type="string" />
+	<element name="postData" type="string" />
+	<element name="putData" type="string" />
+
+
+</schema>

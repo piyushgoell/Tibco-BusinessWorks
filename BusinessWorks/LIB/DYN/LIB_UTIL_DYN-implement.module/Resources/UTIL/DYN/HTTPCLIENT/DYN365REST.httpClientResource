@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:http="http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_8TiQ4OHAEe2uW6pqZSCrOQ" name="UTIL.DYN.HTTPCLIENT.DYN365REST" type="http:HttpClientConfiguration">
+  <jndi:configuration xsi:type="http:HttpClientConfiguration" xmi:id="_8VTLcOHAEe2uW6pqZSCrOQ" httpClientVersion="httpcomponents">
+    <substitutionBindings xmi:id="_MxGykOHtEe2uW6pqZSCrOQ" template="useSingleThreadConnectionManager" propName="/resource/LIB_UTIL_DYN/disableConnectionPooling"/>
+    <substitutionBindings xmi:id="_N0oFEOHtEe2uW6pqZSCrOQ" template="idleConnectionTimeout" propName="/resource/LIB_UTIL_DYN/idealConnectionTimeoutMs"/>
+    <substitutionBindings xmi:id="_SiBBQOHtEe2uW6pqZSCrOQ" template="maxTotalConnections" propName="/resource/LIB_UTIL_DYN/maximumTotalConnections"/>
+    <substitutionBindings xmi:id="_UAHW8OHtEe2uW6pqZSCrOQ" template="maxTotalConnectionsPerHost" propName="/resource/LIB_UTIL_DYN/maximumTotalConnectionsPerHostRoute"/>
+    <substitutionBindings xmi:id="_d5hFAOHtEe2uW6pqZSCrOQ" template="acceptRedirect" propName="/resource/LIB_UTIL_DYN/advanced/acceptRedirect"/>
+    <substitutionBindings xmi:id="_fUP9oOHtEe2uW6pqZSCrOQ" template="useSingleCookieHeader" propName="/resource/LIB_UTIL_DYN/advanced/useSingleCookieHeader"/>
+    <substitutionBindings xmi:id="_hFKhoOHtEe2uW6pqZSCrOQ" template="logReqRespTime" propName="/resource/LIB_UTIL_DYN/advanced/logRequestResponseTime"/>
+    <substitutionBindings xmi:id="_i91TcOHtEe2uW6pqZSCrOQ" template="retryCount" propName="/resource/LIB_UTIL_DYN/advanced/retryCount"/>
+    <substitutionBindings xmi:id="_kbp8UOHtEe2uW6pqZSCrOQ" template="useNonPreemptiveAuth" propName="/resource/LIB_UTIL_DYN/advanced/useNonPreemptiveAuthentication"/>
+    <substitutionBindings xmi:id="_mue6kOHtEe2uW6pqZSCrOQ" template="useDefaultSSL" propName="/resource/LIB_UTIL_DYN/advanced/defaultConfidentiality"/>
+    <substitutionBindings xmi:id="_oX-n8OHtEe2uW6pqZSCrOQ" template="useSSL" propName="/resource/LIB_UTIL_DYN/advanced/confidentiality"/>
+    <tcpDetails xmi:id="_8VXc4OHAEe2uW6pqZSCrOQ">
+      <substitutionBindings xmi:id="_QEtRUOHtEe2uW6pqZSCrOQ" template="port" propName="/resource/LIB_UTIL_DYN/defaultPort"/>
+      <substitutionBindings xmi:id="_ZZG04OHtEe2uW6pqZSCrOQ" template="host" propName="/resource/LIB_UTIL_DYN/defaultHost"/>
+      <substitutionBindings xmi:id="_arJEgOHtEe2uW6pqZSCrOQ" template="soTimeout" propName="/resource/LIB_UTIL_DYN/advanced/socketTimeoutMs"/>
+      <substitutionBindings xmi:id="_cbCU0OHtEe2uW6pqZSCrOQ" template="connectionTimeout" propName="/resource/LIB_UTIL_DYN/advanced/connectionTimeoutMs"/>
+      <substitutionBindings xmi:id="_-Htq0OHtEe2uW6pqZSCrOQ" template="staleCheck" propName="/resource/LIB_UTIL_DYN/staleCheck"/>
+    </tcpDetails>
+  </jndi:configuration>
+</jndi:namedResource>

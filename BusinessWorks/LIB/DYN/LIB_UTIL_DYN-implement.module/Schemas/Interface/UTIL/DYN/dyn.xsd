@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/interface/util/dyn/v1"
+	xmlns:dyn="http://www.example.org/xsd/interface/util/dyn/v1"
+	elementFormDefault="qualified" xmlns:fetchxml="FetchXML">
+
+	<import namespace="FetchXML" schemaLocation="../../../External/Microsoft/fetch.xsd" />
+
+	<element name="PostRequest" type="dyn:PostRequestType" />
+	<complexType name="PostRequestType">
+		<sequence>
+			<element ref="dyn:entity" />
+			<element ref="dyn:selectQuery" minOccurs="0" />
+			<element ref="dyn:expandQuery" minOccurs="0" />
+			<element name="PostData" >
+				<complexType>
+					<sequence>
+						<element ref="dyn:value" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<element name="FetchXmlRequest" type="dyn:FetchXmlRequestType" />
+	<complexType name="FetchXmlRequestType">
+		<sequence>
+			<element ref="dyn:entity" />
+			<element ref="fetchxml:fetch" />
+		</sequence>
+	</complexType>
+
+	<element name="FetchXmlResponse" type="dyn:FetchXmlResponseType" />
+	<complexType name="FetchXmlResponseType">
+		<sequence>
+			<element name="odata.context" minOccurs="0" type="string" />
+			<element name="odata.count" minOccurs="0" type="string" />
+			<element name="Microsoft.Dynamics.CRM.fetchxmlpagingcookie"
+				minOccurs="0" type="string" />
+			<element ref="dyn:value" minOccurs="0" maxOccurs="unbounded"></element>
+		</sequence>
+	</complexType>
+
+	<element name="entity" type="string" />
+	<element name="fetchXml" type="string" />
+	<element name="selectQuery" type="string" />
+	<element name="expandQuery" type="string" />
+
+	<element name="value">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element name="element" minOccurs="0" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+							<element name="name" type="string" />
+							<element name="value" type="string" />
+						</sequence>
+					</complexType>
+				</element>
+				<element ref="dyn:value"/>
+			</choice>
+		</complexType>
+	</element>
+
+
+</schema>

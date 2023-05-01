@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_eoqVsOG7Ee2uW6pqZSCrOQ" targetNamespace="http://tns.tibco.com/bw/composite/LIB_UTIL_DYN-implement.module" name="LIB_UTIL_DYN-implement.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_e6hhwOG7Ee2uW6pqZSCrOQ" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e6u9IOG7Ee2uW6pqZSCrOQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e6wyUOG7Ee2uW6pqZSCrOQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e6yAcOG7Ee2uW6pqZSCrOQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e6z1oOG7Ee2uW6pqZSCrOQ" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e61DwOG7Ee2uW6pqZSCrOQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e62R4OG7Ee2uW6pqZSCrOQ" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e64HEOG7Ee2uW6pqZSCrOQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_e658QOG7Ee2uW6pqZSCrOQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Ca5pMOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/disableConnectionPooling" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Hx2fwOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/maximumTotalConnections" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_HzamAOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/maximumTotalConnectionsPerHostRoute" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_H22UgOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/idealConnectionTimeoutMs" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_H4fTQOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/staleCheck" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_H1Ey4OHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/defaultHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_H58r0OHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/defaultPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_l2IywOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/socketTimeoutMs" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qjYlAOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/acceptRedirect" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qlEnEOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/useSingleCookieHeader" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qmqigOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/logRequestResponseTime" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qoK-YOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/connectionTimeoutMs" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qp6DwOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/retryCount" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qrQHkOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/useNonPreemptiveAuthentication" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_-V3RAOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/confidentiality" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_-bDTAOHsEe2uW6pqZSCrOQ" name="/resource/LIB_UTIL_DYN/advanced/defaultConfidentiality" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+</sca:composite>

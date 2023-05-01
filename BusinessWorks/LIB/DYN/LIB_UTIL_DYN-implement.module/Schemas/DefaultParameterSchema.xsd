@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:source="bw.rest" xmlns:tns="http://xmlns.example.com/Default/parameters" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://xmlns.example.com/Default/parameters">
+  <xs:element name="RestReference1GetParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="entity" type="xs:string"/>
+        <xs:element maxOccurs="1" minOccurs="0" name="fetchXml" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="RestReferencePostParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="entity" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="selectQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="expandQuery" type="xs:string"/>
+            </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="RestReferenceGetParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="entity" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="entityQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="selectQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="expandQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="filterQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="orderbyQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="applyQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="topQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="countQuery" type="xs:string"/>
+            </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="RestReferenceDeleteParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="entity" type="xs:string"/>
+        <xs:element maxOccurs="1" minOccurs="0" name="entityQuery" type="xs:string"/>
+        <xs:element maxOccurs="1" minOccurs="0" name="property" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+    <xs:element name="RestReferencePatchParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="entity" type="xs:string"/>
+        <xs:element maxOccurs="1" minOccurs="0" name="entityQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="selectQuery" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="expandQuery" type="xs:string"/>
+            </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
