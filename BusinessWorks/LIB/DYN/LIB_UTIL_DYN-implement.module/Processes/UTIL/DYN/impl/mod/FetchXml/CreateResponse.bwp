@@ -735,7 +735,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/restjson#//JsonParser"/>
                                     <value jsonInputStyle="None"
                                     schemaType="Generic" xsi:type="restjson:JsonParser">
-                                    <outputEditorElement href="platform:/resource/LIB_UTIL_DYN-implement.module/Schemas/Interface/UTIL/DYN/dyn.xsd#//FetchXmlResponse;XSDElementDeclaration=2"/>
+                                    <outputEditorElement href="platform:/resource/LIB_UTIL_DYN-implement.module/Schemas/Interface/UTIL/DYN/dyn.xsd#//FetchXmlResponse;XSDElementDeclaration=9"/>
                                     </value>
                                 </properties>
                             </activityConfig>

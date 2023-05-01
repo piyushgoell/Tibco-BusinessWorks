@@ -52,7 +52,16 @@
 		</sequence>
 	</complexType>
 
-
+	<element name="DeleteRequest" type="dyn:DeleteRequestType" />
+		<complexType name="DeleteRequestType">
+			<sequence>
+				<element ref="dyn:entity" minOccurs="1" />
+				<element ref="dyn:entityQuery" minOccurs="1"/>
+				<element ref="dyn:property" minOccurs="0"/>
+				<element ref="rest:httpHeaders"/>
+			</sequence>
+		</complexType>
+	
 	<element name="GetOrGenerateDYNAuthorizationTokenRequest"
 		type="dyn:GetOrGenerateDYNAuthorizationTokenRequestType" />
 	<complexType name="GetOrGenerateDYNAuthorizationTokenRequestType">
@@ -69,13 +78,11 @@
 	</complexType>
 
 	<element name="FetchXmlResponse" type="dyn:FetchXmlResponseType" />
-
 	<complexType name="FetchXmlResponseType">
 		<sequence>
 			<choice>
 				<element ref="dyn:responseJsonString" />
 				<sequence>
-
 					<element name="odata.context" minOccurs="0" type="string" />
 					<element name="odata.count" minOccurs="0" type="string" />
 					<element name="Microsoft.Dynamics.CRM.fetchxmlpagingcookie"
@@ -87,10 +94,35 @@
 							</sequence>
 						</complexType>
 					</element>
-
 				</sequence>
-
 			</choice>
+		</sequence>
+	</complexType>
+	
+	<element name="GetResponse" type="dyn:GetResponseType"/>
+	<complexType name="GetResponseType">
+		<sequence>
+				<element ref="dyn:responseJsonString" />	
+		</sequence>
+	</complexType>
+	
+	<element name="PostResponse" type="dyn:PostResponseType"/>
+	<complexType name="PostResponseType">
+		<sequence>
+				<element ref="dyn:responseJsonString" />	
+		</sequence>
+	</complexType>
+	
+	<element name="UpdateResponse" type="dyn:UpdateResponseType"/>
+	<complexType name="UpdateResponseType">
+		<sequence>
+				<element ref="dyn:responseJsonString" />	
+		</sequence>
+	</complexType>
+	
+	<element name="DeleteResponse" type="dyn:DeleteResponseType"/>
+	<complexType name="DeleteResponseType">
+		<sequence>	
 		</sequence>
 	</complexType>
 
@@ -110,6 +142,7 @@
 	<element name="countQuery" type="string" />
 	<element name="postData" type="string" />
 	<element name="putData" type="string" />
+	<element name="property" type="string" />
 
 
 </schema>

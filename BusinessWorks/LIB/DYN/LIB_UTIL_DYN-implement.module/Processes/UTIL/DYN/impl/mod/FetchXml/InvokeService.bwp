@@ -610,18 +610,6 @@
             <element href="//0/@process/@activity/@activity/@links/@children.3"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
-        <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
-            <bendpoints
-                points="[0, -24, -256, -24]$[0, -43, -256, -43]$[256, -43, 0, -43]$[256, -24, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -728,11 +716,10 @@
     <bpws:scope name="scope">
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToget" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                <bpws:link name="StartToget" tibex:linkType="SUCCESS"/>
                 <bpws:link name="getToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="getToLog" tibex:linkType="ERROR"/>
                 <bpws:link name="LogToThrow" tibex:linkType="SUCCESS"/>
-                <bpws:link name="StartToEnd" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -741,13 +728,8 @@
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToget">
-                            <tibex:DesignExpression>
-                                <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                            </tibex:DesignExpression>
-                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                            <tibex:DesignExpression/>
                         </bpws:source>
-                        <bpws:source linkName="StartToEnd"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -755,16 +737,17 @@
                 </tibex:receiveEvent>
             </bpws:extensionActivity>
             <bpws:extensionActivity>
-                <tibex:activityExtension inputVariable="End-input"
-                    name="End"
+                <tibex:activityExtension
+                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dyn1=&quot;http://www.example.org/xsd/internal/util/dyn/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;dyn1:FetchXmlResponse>&lt;dyn1:responseJsonString>&lt;xsl:value-of select=&quot;$get/item&quot;/>&lt;/dyn1:responseJsonString>&lt;/dyn1:FetchXmlResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                    inputVariable="End-input" name="End"
                     tibex:xpdlId="d5260eb6-7c98-46af-8132-b2abe52494c4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:targets>
                         <bpws:target linkName="getToEnd"/>
-                        <bpws:target linkName="StartToEnd"/>
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dyn1=&quot;http://www.example.org/xsd/internal/util/dyn/v1&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;dyn1:FetchXmlResponse>&lt;dyn1:responseJsonString>&lt;xsl:value-of select=&quot;'{&amp;quot;@odata.context&amp;quot;:&amp;quot;https://rlgcit.api.crm11.dynamics.com/api/data/v9.2/$metadata#accounts(accountid,name)&amp;quot;,&amp;quot;value&amp;quot;:[{&amp;quot;@odata.etag&amp;quot;:&amp;quot;W/\&amp;quot;506678\&amp;quot;&amp;quot;,&amp;quot;accountid&amp;quot;:&amp;quot;89390c24-9c72-e511-80d4-00155d2a68d1&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Fourth Coffee (sample)&amp;quot;,&amp;quot;accountnumber&amp;quot;:&amp;quot;1234&amp;quot;,&amp;quot;address&amp;quot;:[{&amp;quot;@odata.etag&amp;quot;:&amp;quot;W/\&amp;quot;502172\&amp;quot;&amp;quot;,&amp;quot;accountid&amp;quot;:&amp;quot;8b390c24-9c72-e511-80d4-00155d2a68d1&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Litware, Inc. (sample)&amp;quot;},{&amp;quot;@odata.etag&amp;quot;:&amp;quot;W/\&amp;quot;502174\&amp;quot;&amp;quot;,&amp;quot;accountid&amp;quot;:&amp;quot;8d390c24-9c72-e511-80d4-00155d2a68d1&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Adventure Works (sample)&amp;quot;}]},{&amp;quot;@odata.etag&amp;quot;:&amp;quot;W/\&amp;quot;502172\&amp;quot;&amp;quot;,&amp;quot;accountid&amp;quot;:&amp;quot;8b390c24-9c72-e511-80d4-00155d2a68d1&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Litware, Inc. (sample)&amp;quot;},{&amp;quot;@odata.etag&amp;quot;:&amp;quot;W/\&amp;quot;502174\&amp;quot;&amp;quot;,&amp;quot;accountid&amp;quot;:&amp;quot;8d390c24-9c72-e511-80d4-00155d2a68d1&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Adventure Works (sample)&amp;quot;},{&amp;quot;@odata.etag&amp;quot;:&amp;quot;W/\&amp;quot;506705\&amp;quot;&amp;quot;,&amp;quot;accountid&amp;quot;:&amp;quot;8f390c24-9c72-e511-80d4-00155d2a68d1&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Fabrikam, Inc. (sample)&amp;quot;}]}'&quot;/>&lt;/dyn1:responseJsonString>&lt;/dyn1:FetchXmlResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:dyn1=&quot;http://www.example.org/xsd/internal/util/dyn/v1&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get.item&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;dyn1:FetchXmlResponse>&#xa;            &lt;dyn1:responseJsonString>&#xa;                &lt;xsl:value-of select=&quot;$get.item&quot;/>&#xa;            &lt;/dyn1:responseJsonString>&#xa;        &lt;/dyn1:FetchXmlResponse>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

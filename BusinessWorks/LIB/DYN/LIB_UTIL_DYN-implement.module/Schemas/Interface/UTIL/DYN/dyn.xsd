@@ -14,10 +14,96 @@
 			<element name="PostData" >
 				<complexType>
 					<sequence>
-						<element ref="dyn:value" minOccurs="0" maxOccurs="unbounded"/>
+						<element ref="dyn:value" minOccurs="0" />
 					</sequence>
 				</complexType>
 			</element>
+		</sequence>
+	</complexType>
+	
+	<element name="PostResponse" type="dyn:PostResponseType" />
+	<complexType name="PostResponseType">
+		<sequence>
+			<element name="Post" >
+				<complexType>
+					<sequence>
+						<element ref="dyn:value" minOccurs="0" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	
+	<element name="UpdateRequest" type="dyn:UpdateRequestType" />
+	<complexType name="UpdateRequestType">
+		<sequence>
+			<element ref="dyn:entity" minOccurs="1"/>
+			<element ref="dyn:entityQuery" minOccurs="1" />
+			<element ref="dyn:selectQuery" minOccurs="0" />
+			<element ref="dyn:expandQuery" minOccurs="0" />
+			<element name="PutData" >
+				<complexType>
+					<sequence>
+						<element ref="dyn:value" minOccurs="0" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	
+	<element name="UpdateResponse" type="dyn:UpdateResponseType" />
+	<complexType name="UpdateResponseType">
+		<sequence>
+			<element name="Update" >
+				<complexType>
+					<sequence>
+						<element ref="dyn:value" minOccurs="0" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	
+	<element name="GetRequest" type="dyn:GetRequestType" />
+	<complexType name="GetRequestType">
+		<sequence>
+			<element ref="dyn:entity" minOccurs="1"/>
+			<element ref="dyn:entityQuery" minOccurs="0"/>
+			<element ref="dyn:selectQuery" minOccurs="0"/>
+			<element ref="dyn:expandQuery" minOccurs="0"/>
+			<element ref="dyn:filterQuery" minOccurs="0"/>
+			<element ref="dyn:orderbyQuery" minOccurs="0"/>
+			<element ref="dyn:applyQuery" minOccurs="0"/>
+			<element ref="dyn:topQuery" minOccurs="0"/>
+			<element ref="dyn:countQuery" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="GetResponse" type="dyn:GetResponseType" />
+	<complexType name="GetResponseType">
+		<sequence>
+			<element name="Get" >
+				<complexType>
+					<sequence>
+						<element ref="dyn:value" minOccurs="0" />
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	
+	<element name="DeleteRequest" type="dyn:DeleteRequestType" />
+		<complexType name="DeleteRequestType">
+			<sequence>
+				<element ref="dyn:entity" minOccurs="1" />
+				<element ref="dyn:entityQuery" minOccurs="1"/>
+				<element ref="dyn:property" minOccurs="0"/>
+			</sequence>
+		</complexType>
+		
+		<element name="DeleteResponse" type="dyn:DeleteResponseType" />
+	<complexType name="DeleteResponseType">
+		<sequence>
 		</sequence>
 	</complexType>
 
@@ -40,10 +126,6 @@
 		</sequence>
 	</complexType>
 
-	<element name="entity" type="string" />
-	<element name="fetchXml" type="string" />
-	<element name="selectQuery" type="string" />
-	<element name="expandQuery" type="string" />
 
 	<element name="value">
 		<complexType>
@@ -56,10 +138,25 @@
 						</sequence>
 					</complexType>
 				</element>
-				<element ref="dyn:value"/>
+				<element ref="dyn:value" minOccurs="0" maxOccurs="unbounded"/>
 			</choice>
 		</complexType>
 	</element>
+	
+	
+	<element name="entity" type="string" />
+	<element name="entityQuery" type="string" />
+	<element name="fetchXml" type="string" />
+	<element name="selectQuery" type="string" />
+	<element name="expandQuery" type="string" />
+	<element name="filterQuery" type="string" />
+	<element name="orderbyQuery" type="string" />
+	<element name="applyQuery" type="string" />
+	<element name="topQuery" type="string" />
+	<element name="countQuery" type="string" />
+	<element name="postData" type="string" />
+	<element name="putData" type="string" />
+	<element name="property" type="string" />
 
 
 </schema>
