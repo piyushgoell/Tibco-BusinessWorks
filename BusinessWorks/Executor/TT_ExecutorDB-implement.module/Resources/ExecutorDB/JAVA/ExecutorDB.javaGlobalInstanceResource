@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:javasharedresource="http://ns.tibco.com/bw/palette/javasharedresource" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_KUqh0eDbEe29MaD0li59fA" name="ExecutorDB.JAVA.ExecutorDB" type="javasharedresource:JavaGlobalInstanceResource">
+  <jndi:configuration xsi:type="javasharedresource:JavaGlobalInstance" xmi:id="_KUqh0uDbEe29MaD0li59fA" className="TT.ExecutorDB.PostgresSQLJDBCClient.PostgresSQLJDBCClient" methodName="PostgresSQLJDBCClient" isNewShared="true">
+    <javaConstructorParameter xmi:id="_OyQAEeDeEe29MaD0li59fA" paramName="host" paramType="string" paramValue="localhost"/>
+    <javaConstructorParameter xmi:id="_OyQAE-DeEe29MaD0li59fA" paramName="port" paramType="int" paramValue="5433"/>
+    <javaConstructorParameter xmi:id="_OyQAFeDeEe29MaD0li59fA" paramName="database" paramType="string" paramValue="JobExecutor"/>
+    <javaConstructorParameter xmi:id="_OyQAF-DeEe29MaD0li59fA" paramName="username" paramType="string" paramValue="postgres"/>
+    <javaConstructorParameter xmi:id="_OyQAGeDeEe29MaD0li59fA" paramName="password" paramType="string" paramValue="root"/>
+    <methodParameters xmi:id="_OyQAEODeEe29MaD0li59fA" paramType="string"/>
+    <methodParameters xmi:id="_OyQAEuDeEe29MaD0li59fA" paramType="int"/>
+    <methodParameters xmi:id="_OyQAFODeEe29MaD0li59fA" paramType="string"/>
+    <methodParameters xmi:id="_OyQAFuDeEe29MaD0li59fA" paramType="string"/>
+    <methodParameters xmi:id="_OyQAGODeEe29MaD0li59fA" paramType="string"/>
+  </jndi:configuration>
+</jndi:namedResource>

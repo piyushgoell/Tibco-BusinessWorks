@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/xsd/interface/tt/executordb/v1" xmlns:executor="http://www.example.org/xsd/interface/tt/executordb/v1" elementFormDefault="qualified">
+	
+	<element name="CreateExecutorJobRequest" type="executor:CreateExecutorJobRequestType"/>
+	<complexType name="CreateExecutorJobRequestType">
+		<sequence>
+			<element ref="executor:ExecutorJob"/>
+			<element ref="executor:ExecutorTask" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<element name="CreateExecutorJobResponse" type="executor:CreateExecutorJobResponseType"/>
+	<complexType name="CreateExecutorJobResponseType">
+		<sequence>
+			<element ref="executor:ExecutorId"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ExtendExecutorJobRequest" type="executor:ExtendExecutorJobRequestType"/>
+	<complexType name="ExtendExecutorJobRequestType">
+		<sequence>
+			<element ref="executor:ExtendJob" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ExtendExecutorJobResponse" type="executor:ExtendExecutorJobResponseType"/>
+	<complexType name="ExtendExecutorJobResponseType">
+		<sequence>
+		</sequence>
+	</complexType>
+	
+	<element name="ExtendJob" type="executor:ExtendJobType"/>
+	<complexType name="ExtendJobType">
+		<sequence>
+			<choice>
+				<element ref="executor:ExecutorActivity" minOccurs="1" maxOccurs="unbounded"/>
+				<element ref="executor:ExecutorTask" minOccurs="1" maxOccurs="unbounded"/>
+			</choice>
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorJob" type="executor:ExecutorJobType"/>
+	<complexType name="ExecutorJobType">
+		<sequence>
+			<element ref="executor:ExecutorType"/>
+			<element ref="executor:ExecutorState"/>
+			<element ref="executor:ExecutorPriority"/>
+			<element ref="executor:ExecutorEffectiveDate"/>
+			<element ref="executor:ExecutorCreatedBy"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorTask" type="executor:ExecutorTaskType"/>
+	<complexType name="ExecutorTaskType">
+		<sequence>
+			<element ref="executor:ExecutorTaskType"/>
+			<element ref="executor:ExecutorTaskState"/>
+			<element ref="executor:ExecutorTaskName"/>
+			<element ref="executor:ExecutorTaskSequence"/>
+			<element ref="executor:ExecutorActivity" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorActivity" type="executor:ExecutorActivityType"/>
+	<complexType name="ExecutorActivityType">
+		<sequence>
+			<element ref="executor:ExecutorActivityType"/>
+			<element ref="executor:ExecutorActivityState"/>
+			<element ref="executor:ExecutorActivityName"/>
+			<element ref="executor:ExecutorActivitySequence"/>
+			<choice>
+				<element ref="executor:ExecutorIntegration"/>
+				<element ref="executor:ExecutorEvent"/>
+			</choice>
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorIntegration" type="executor:ExecutorIntegrationType"/>
+	<complexType name="ExecutorIntegrationType">
+		<sequence>
+			<element ref="executor:ExecutorIntegrationConfiguration"/>
+			<element ref="executor:RequestMessage"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorIntegrationConfiguration" type="executor:ExecutorIntegrationConfigurationType"/>
+	<complexType name="ExecutorIntegrationConfigurationType">
+		<sequence>
+			<element ref="executor:Channel"/>
+			<element ref="executor:Endpoint"/>
+			<element ref="executor:TimeoutInMsec"/>
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorEvent" type="executor:ExecutorEventType"/>
+	<complexType name="ExecutorEventType">
+		<sequence>
+			<element ref="executor:EventKey" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<element name="RequestMessage" type="executor:PayloadType"/>
+	<element name="ResponsetMessage" type="executor:PayloadType"/>
+	<element name="ExecptionMessage" type="executor:PayloadType"/>
+	<complexType name="PayloadType">
+		<sequence>
+			<any processContents="skip" />
+		</sequence>
+	</complexType>
+	
+	<element name="ExecutorType" type="string"/>
+	<element name="ExecutorPriority" type="string"/>
+	<element name="ExecutorState" type="string"/>
+	<element name="ExecutorEffectiveDate" type="dateTime"/>
+	<element name="ExecutorCreatedBy" type="string"/>
+	
+	<element name="ExecutorTaskType" type="string"/>
+	<element name="ExecutorTaskState" type="string"/>
+	<element name="ExecutorTaskName" type="string"/>
+	<element name="ExecutorTaskSequence" type="string"/>
+	
+	<element name="ExecutorActivityType" type="string"/>
+	<element name="ExecutorActivityState" type="string"/>
+	<element name="ExecutorActivityName" type="string"/>
+	<element name="ExecutorActivitySequence" type="string"/>
+	
+	<element name="Endpoint" type="string"/>
+	<element name="Channel" type="string"/>
+	<element name="TimeoutInMsec" type="long"/>
+
+	<element name="EventKey" type="string"/>
+	<element name="ExecutorId" type="string"/>
+
+</schema>

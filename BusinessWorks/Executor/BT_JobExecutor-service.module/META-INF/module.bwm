@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_U4fBINavEe2JAaTcMffJnA" targetNamespace="http://tns.tibco.com/bw/composite/BT_JobExecutor-service.module" name="BT_JobExecutor-service.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_VMpTQNavEe2JAaTcMffJnA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VNNT8NavEe2JAaTcMffJnA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VNtqQNavEe2JAaTcMffJnA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VONZgNavEe2JAaTcMffJnA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VOrTkNavEe2JAaTcMffJnA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VPKbwNavEe2JAaTcMffJnA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VPw4sNavEe2JAaTcMffJnA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VQPZ0NavEe2JAaTcMffJnA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VQt68NavEe2JAaTcMffJnA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_bmDFUNavEe2JAaTcMffJnA" name="ComponentCreateJob" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_bmDFUdavEe2JAaTcMffJnA" processName="BT.JobExecutor.impl.CreateJob.CreateJob"/>
+  </sca:component>
+</sca:composite>
