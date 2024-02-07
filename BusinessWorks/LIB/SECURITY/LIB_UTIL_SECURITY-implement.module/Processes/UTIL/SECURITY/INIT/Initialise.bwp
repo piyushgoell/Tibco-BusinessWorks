@@ -546,8 +546,6 @@
                         <tibex:inputBinding
                             expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:security=&quot;http://www.example.org/xsd/interface/util/security/security/v1&quot; xmlns:transaction=&quot;http://www.example.org/xsd/interface/util/security/transaction/v1&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;InitialiseTransaction&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;security:InitialiseResponse>&lt;security:Header>&lt;xsl:copy-of select=&quot;$InitialiseTransaction/transaction:TransactionInfo&quot;/>&lt;/security:Header>&lt;/security:InitialiseResponse>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
-                    <tibex:inputBinding
-                        expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">&lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:security="http://www.example.org/xsd/interface/util/security/security/v1" version="2.0"&gt; &lt;xsl:template name="End-input" match="/"&gt; &lt;security:InitialiseResponse/&gt;&lt;/xsl:template&gt; &lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                     <tibex:config>
                         <bwext:BWActivity
                             activityTypeID="bw.internal.end"
