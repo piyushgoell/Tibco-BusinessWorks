@@ -3,8 +3,9 @@ Bundle-ManifestVersion: 2
 Bundle-Name: LIB_UTIL_SECURITY-implement Module
 Bundle-SymbolicName: LIB_UTIL_SECURITY-implement.module
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: lib/jjwt-api-0.11.5.jar,.annoxfiles/,.
+Bundle-ClassPath: .annoxfiles/,lib/jjwt-api-0.12.5.jar,.
 Bundle-Vendor: TIBCO Software Inc.
+Export-Package: UTIL.SECURITY
 Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
  com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
  com.tibco.bw.palette; filter:="(name=bw.java)",

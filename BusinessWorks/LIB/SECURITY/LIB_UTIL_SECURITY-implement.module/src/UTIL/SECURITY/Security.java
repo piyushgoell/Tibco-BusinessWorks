@@ -13,9 +13,9 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.JwsHeader;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SigningKeyResolver;;
+import io.jsonwebtoken.LocatorAdapter;
 
-public class Security implements SigningKeyResolver {
+public class Security extends LocatorAdapter<Key> {
 
 	private static String KeyFactoryAlgorithm = "RSA";
 	private static JwtParser jwtParser;
@@ -36,8 +36,8 @@ public class Security implements SigningKeyResolver {
 	 
 	public static String[] ParseJwt(String JwtToken, Boolean AllowExpiredJwt) throws Exception {
 		try{
-			Jws<Claims> jws = jwtParser.parseClaimsJws(JwtToken);
-			return getJwtClaims(jws.getBody());
+			Jws<Claims> jws = jwtParser.parseSignedClaims(JwtToken);
+			return getJwtClaims(jws.getPayload());
 			
 		}catch (Exception ex){
 			if(AllowExpiredJwt==true && ex instanceof ExpiredJwtException){
@@ -73,8 +73,8 @@ public class Security implements SigningKeyResolver {
 			Key rsaKey = KeyFactory.getInstance(KeyFactoryAlgorithm).generatePrivate(new RSAPublicKeySpec(new BigInteger(modulus),new BigInteger(exponent)));
 			
 			signingKeys.put(kid, rsaKey);
-			jwtParser = Jwts.parserBuilder().setAllowedClockSkewSeconds(clockSkewSeconds).setSigningKey(rsaKey).setSigningKeyResolver(new Security()).build();
-			
+			//jwtParser = Jwts.parser().setAllowedClockSkewSeconds(clockSkewSeconds).setSigningKey(rsaKey).setSigningKeyResolver(new Security()).build();
+			jwtParser = Jwts.parser().clockSkewSeconds(clockSkewSeconds).keyLocator(new Security()).build();
 		} catch (Exception ex) {
 			throw ex;
 		} 
@@ -89,26 +89,19 @@ public class Security implements SigningKeyResolver {
 		}
 		return jwtClaims;
 	}
-
-	@Override
-	public Key resolveSigningKey(@SuppressWarnings("rawtypes") JwsHeader header, Claims claims) {
-		String kid = header.getKeyId();
-		if(kid != null)
-				return signingKeys.getOrDefault(kid, null);
-		else
-			return null;
-	}
-
-	@Override
-	public Key resolveSigningKey(@SuppressWarnings("rawtypes") JwsHeader header, String plaintext) {
-		String kid = header.getKeyId();
-		if(kid != null)
-				return signingKeys.getOrDefault(kid, null);
-		else
-			return null;
-	}
-
 	
+	@Override
+    public Key locate(JwsHeader header) { // both JwsHeader and JweHeader extend ProtectedHeader
+
+        //inspect the header, lookup and return the verification key
+        String keyId = header.getKeyId(); //or any other parameter that you need to inspect
+
+        Key key = signingKeys.getOrDefault(keyId, null); 
+
+        return key;
+    }
+	
+
 	
 	
 }
