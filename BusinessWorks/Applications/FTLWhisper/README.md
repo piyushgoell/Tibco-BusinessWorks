@@ -27,6 +27,6 @@ FTL Whisper is a simple web application designed to facilitate communication thr
     BusinessWorks/Applications/FTLWhisper/src
 
 2. Open the index.html file in your web browser.
-    
+    ![](images/FTLWhisper.PNG)
 
 
