@@ -1,0 +1,56 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "FTLWhisperUI",
+    "description" : "FTLWhisperUI"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-FTLWhisperUI",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/xml" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a Form to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Form"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Form" : {
+      "type" : "object",
+      "properties" : {
+        "Channel" : {
+          "type" : "string"
+        },
+        "IsPublished" : {
+          "type" : "boolean"
+        },
+        "TimeOut" : {
+          "type" : "string"
+        },
+        "JwtToken" : {
+          "type" : "string"
+        },
+        "RequestXML" : {
+          "type" : "string"
+        },
+        "ResponseXML" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

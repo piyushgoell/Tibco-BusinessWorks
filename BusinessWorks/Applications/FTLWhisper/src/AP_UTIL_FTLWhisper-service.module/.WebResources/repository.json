@@ -1,0 +1,13 @@
+{
+    "records": [],
+    "resources": [
+        {
+            "location": "Service Descriptors/AP.UTIL.FTLWhisper_v1.rest.FTLWhisper-FTLWhisper.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/AP.UTIL.FTLWhisper_v1.rest.FTLWhisperUI-FTLWhisperUI.json",
+            "type": "generated"
+        }
+    ]
+}

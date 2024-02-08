@@ -1,0 +1,78 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "FTLWhisperREST service.",
+    "description" : "FTLWhisperREST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/FTLWhisper" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-FTLWhisper",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "text/plain" ],
+        "parameters" : [ {
+          "name" : "channel",
+          "in" : "formData",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "shouldPublish",
+          "in" : "formData",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "jwtToken",
+          "in" : "formData",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        }, {
+          "name" : "requestXML",
+          "in" : "formData",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        }, {
+          "name" : "timeOut",
+          "in" : "formData",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-FTLWhisper",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "text/plain" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { }
+}

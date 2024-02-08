@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/interface/ap/util/ftlwhisper/v1" elementFormDefault="qualified" targetNamespace="http://www.example.org/interface/ap/util/ftlwhisper/v1">
+
+<complexType name="FormType">
+	<sequence>
+		<element minOccurs="0" name="Channel" type="string"/>
+		<element minOccurs="0" name="ShouldPublish" type="boolean"/>
+		<element minOccurs="0" name="TimeOutMSec" type="long"/>
+		<element minOccurs="0" name="JwtToken" type="string"/>
+		<element minOccurs="0" name="RequestXML" type="string"/>
+		<element minOccurs="0" name="ResponseTimeMsec" type="long"/>
+		<element minOccurs="0" name="ResponseXML" type="string"/>
+	</sequence>
+</complexType>
+
+<element name="Form" type="tns:FormType"/>
+
+    <complexType name="PayloadType">
+    	<sequence>
+    		<any processContents="skip" />
+    	</sequence>
+    </complexType>
+    <element name="Payload" type="tns:PayloadType"/>
+</schema>

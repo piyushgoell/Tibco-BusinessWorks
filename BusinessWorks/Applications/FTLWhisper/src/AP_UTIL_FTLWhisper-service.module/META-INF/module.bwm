@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:parameters="http://xmlns.example.com/FTLWhisper/parameters" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_bX_nYMWSEe6p0I_ephJOUA" targetNamespace="http://tns.tibco.com/bw/composite/AP_UTIL_FTLWhisper-service.module" name="AP_UTIL_FTLWhisper-service.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_cIFAgMWSEe6p0I_ephJOUA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cIPYkMWSEe6p0I_ephJOUA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cITC8MWSEe6p0I_ephJOUA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cIWtUMWSEe6p0I_ephJOUA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cIaXsMWSEe6p0I_ephJOUA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cIcz8MWSEe6p0I_ephJOUA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cIgeUMWSEe6p0I_ephJOUA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cIjhoMWSEe6p0I_ephJOUA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cInMAMWSEe6p0I_ephJOUA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_n5qnIMWxEe6Zi40dn0_Ulw" name="ComponentFTLWhisper" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_n5qnIcWxEe6Zi40dn0_Ulw" processName="AP.UTIL.FTLWhisper_v1.rest.FTLWhisper"/>
+  </sca:component>
+</sca:composite>

@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/AP_UTIL_FTLWhisper-service.module/Service Descriptors/AP.UTIL.FTLWhisper_v1.rest.FTLWhisper-FTLWhisper.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "/T1707296073380Converted/JsonSchema"
+    },
+    {
+        "jsonSchemaLocation": "/AP_UTIL_FTLWhisper-service.module/Service Descriptors/AP.UTIL.FTLWhisper_v1.rest.FTLWhisper-FTLWhisper.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/interface/ap/util/ftlwhisper/v1"
+    }
+]}
