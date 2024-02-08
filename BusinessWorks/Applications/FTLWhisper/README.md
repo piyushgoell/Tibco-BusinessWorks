@@ -29,9 +29,10 @@ FTL Whisper is a simple web application designed to facilitate communication thr
 ## Installation
 
 1. Repository:
-    BusinessWorks/Applications/FTLWhisper/src
 
-2. Open the index.html file in your web browser.
+   **BusinessWorks/Applications/FTLWhisper/src**
+
+3. Open the http://localhost:port in your web browser.
     ![FTLWhisper](images/FTLWhisper.png)
 
 ## Benefits
