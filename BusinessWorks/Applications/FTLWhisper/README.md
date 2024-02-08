@@ -12,14 +12,19 @@ FTL Whisper is a simple web application designed to facilitate communication thr
 
 1. **Publish Messages:**
     - Enter the channel name in the "Channel" input field.
-    - Optionally, check the "Should Publish" checkbox to indicate whether the message should be published.
+    - Check the "Should Publish" checkbox to indicate that the message should be published.
     - Enter the timeout in milliseconds in the "Timeout MSec" input field.
     - Enter the JWT token in the "JWT Token" input field.
     - Enter the request XML in the "Request XML" textarea.
     - Click the "Submit" button to publish the message.
 
 2. **Subscribe to Channels:**
-    - To subscribe to channels and receive messages, additional functionality needs to be implemented.
+    - Enter the channel name in the "Channel" input field.
+    - Leave the "Should Publish" checkbox unchecked to indicate subscribing to the channel.
+    - Enter the timeout in milliseconds in the "Timeout MSec" input field.
+    - Enter the JWT token in the "JWT Token" input field.
+    - Enter the request XML in the "Request XML" textarea.
+    - Click the "Submit" button to subscribe to the channel.
 
 ## Installation
 
@@ -28,5 +33,13 @@ FTL Whisper is a simple web application designed to facilitate communication thr
 
 2. Open the index.html file in your web browser.
     ![FTLWhisper](images/FTLWhisper.png)
+
+## Benefits
+
+1. **Simplified Communication:** FTL Whisper provides a straightforward interface for both publishing messages and subscribing to channels, making communication tasks easier and more accessible.
+
+2. **Testing Capabilities:** Developers can leverage FTL Whisper to publish messages for testing purposes, facilitating the validation of messaging functionalities within their applications.
+
+3. **Orchestration Testing:** FTL Whisper allows for testing of individual orchestrations rather than the complete flow, enabling developers to isolate and validate specific components or functionalities within their systems.
 
 
